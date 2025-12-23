@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce634be95ce40d04ab77e8a4b8d641e4, type: 3}
+  m_Name: BlackQueen
+  m_EditorClassIdentifier: 
+  itemName: BlackQueen
+  itemID: BlackQueen-3a4e9c38-8c95-4411-847c-44ab3659435e
+  itemIcon: {fileID: 21300000, guid: 6cf02890d88168f4b87da2c04d02f6cc, type: 3}
+  itemPrefab: {fileID: 7843548104588156950, guid: 2f1c593e098df6c4fbbe03e34f1335b2, type: 3}
+  isInCorrectPosition: 0
