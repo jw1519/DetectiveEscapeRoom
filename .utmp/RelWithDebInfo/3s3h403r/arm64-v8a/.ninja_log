@@ -1,0 +1,10 @@
+# ninja log v5
+29	1703	7882166782358482	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	c8d3d5a9f5be4ff2
+22	1715	7882166782342197	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	7a679b57648b7eb0
+1	1746	7882166782821744	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	700c76f17283610b
+46	1756	7882166782931019	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	55b2459424e04c0
+10	1838	7882166783710203	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	8d796634aaeb8e34
+55	1943	7882166784831812	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	74c2be760e5c7beb
+36	2098	7882166786395770	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	54ddd4b873590668
+16	2205	7882166787418784	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	6ec59e23ad03af71
+2207	2332	7882166788705565	D:/myProjects/DetectiveEscapeRoom/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/3s3h403r/obj/arm64-v8a/libgame.so	1919b62e628de338
