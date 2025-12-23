@@ -5,13 +5,17 @@ public class InventoryUIManager : MonoBehaviour
 {
     public GameObject itemContainer;
     public GameObject inventoryContainer;
+    public Button closeButton;
+    public Button openButton;
     public void OpenInventory()
     {
         gameObject.SetActive(true);
+        openButton.gameObject.SetActive(false);
     }
     public void CloseInventory()
     {
         gameObject.SetActive(false);
+        openButton.gameObject.SetActive(true);
     }
     public void AddItem(Item item)
     {

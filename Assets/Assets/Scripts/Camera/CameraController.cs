@@ -5,6 +5,13 @@ public class CameraController : MonoBehaviour
 {
     public GameObject leftButton;
     public GameObject rightButton;
+    private void Start()
+    {
+        if (GyroManager.Instance.isGyroActive)
+        {
+            DisableButtons();
+        }
+    }
     private void OnEnable()
     {
         ZoomManager.Instance.onZoomIn += DisableButtons;
