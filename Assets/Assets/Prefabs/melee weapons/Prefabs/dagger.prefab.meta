@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: abbdee6e3d387934dbf4033a50d515ae
+guid: ac9fb240b05c88843b0692c49ff23cbe
 PrefabImporter:
   externalObjects: {}
   userData: 
@@ -10,5 +10,5 @@ AssetOrigin:
   productId: 246654
   packageName: Melee Weapons Pack 28+
   packageVersion: 1.0
-  assetPath: Assets/melee weapons/Prefabs/dagger.prefab
+  assetPath: Assets/melee weapons/Prefabs/dagger3.prefab
   uploadId: 574764
