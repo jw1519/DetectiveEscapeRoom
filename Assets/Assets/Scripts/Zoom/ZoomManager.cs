@@ -16,10 +16,14 @@ public class ZoomManager : MonoBehaviour
     Camera cam => Camera.main;
     private void Awake()
     {
-        if (Instance == null)
+        if (Instance != null && Instance != this)
         {
-            Instance = this;
+            Destroy(gameObject);
+            return;
         }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
     private void Update()
     {
@@ -61,9 +65,10 @@ public class ZoomManager : MonoBehaviour
             GyroManager.Instance.EnableGyro();
             zoomOutButton.gameObject.SetActive(false);
             cam.fieldOfView = 60; //reset to default zoom
-            cam.transform.position = new Vector3(0, 2, 0);
-            cam.transform.rotation = Quaternion.Euler(0, cam.transform.rotation.y, 0);
+            cam.transform.position = new Vector3(0, 1.6f, 0);
+            cam.transform.rotation = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0);
             onZoomOut?.Invoke();
+            Debug.Log($"Invoking from ZoomManager ID: {GetInstanceID()}");
         }
         else //zoom to the previous zoom
         {
