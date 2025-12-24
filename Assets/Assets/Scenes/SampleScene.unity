@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 46543922}
   - component: {fileID: 46543921}
   - component: {fileID: 46543924}
+  - component: {fileID: 46543925}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -245,6 +246,20 @@ MonoBehaviour:
   inventoryContainer: {fileID: 136928284}
   closeButton: {fileID: 643040127}
   openButton: {fileID: 1002325235}
+--- !u!114 &46543925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46543919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22aa6acccf843b4fb2b05cb56780a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+  selectedItem: {fileID: 0}
 --- !u!1 &81540504
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +474,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00008754694, y: 0}
+  m_AnchoredPosition: {x: 0.000094531635, y: 0}
   m_SizeDelta: {x: -18.3885, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &136928286
@@ -1643,6 +1658,38 @@ PrefabInstance:
     - target: {fileID: 3062993054359441223, guid: 266d20e2d1362b64087f144324e44a94, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913467914503575465, guid: 266d20e2d1362b64087f144324e44a94, type: 3}
+      propertyPath: zoomView
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913467914503575465, guid: 266d20e2d1362b64087f144324e44a94, type: 3}
+      propertyPath: targetPosition.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913467914503575465, guid: 266d20e2d1362b64087f144324e44a94, type: 3}
+      propertyPath: targetPosition.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913467914503575465, guid: 266d20e2d1362b64087f144324e44a94, type: 3}
+      propertyPath: targetPosition.z
+      value: -3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679474838557932875, guid: 266d20e2d1362b64087f144324e44a94, type: 3}
+      propertyPath: zoomView
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679474838557932875, guid: 266d20e2d1362b64087f144324e44a94, type: 3}
+      propertyPath: targetPosition.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679474838557932875, guid: 266d20e2d1362b64087f144324e44a94, type: 3}
+      propertyPath: targetPosition.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679474838557932875, guid: 266d20e2d1362b64087f144324e44a94, type: 3}
+      propertyPath: targetPosition.z
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 9188905471236265199, guid: 266d20e2d1362b64087f144324e44a94, type: 3}
       propertyPath: m_Name
@@ -3079,7 +3126,7 @@ Transform:
   m_GameObject: {fileID: 1584562892}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.781, y: 1.6, z: -3.39}
+  m_LocalPosition: {x: 1.848, y: 1.336, z: -4.118}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
