@@ -11,6 +11,8 @@ public class CameraController : MonoBehaviour
         {
             DisableButtons();
         }
+        ZoomManager.Instance.onZoomIn += DisableButtons;
+        ZoomManager.Instance.onZoomOut += EnableButtons;
     }
     private void OnEnable()
     {
