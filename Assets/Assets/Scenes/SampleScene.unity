@@ -1714,6 +1714,14 @@ PrefabInstance:
       value: Cupboard
       objectReference: {fileID: 0}
     - target: {fileID: 5506360406348669000, guid: 529f4b65452bdae41bf12bb96458876a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506360406348669000, guid: 529f4b65452bdae41bf12bb96458876a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506360406348669000, guid: 529f4b65452bdae41bf12bb96458876a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.61
       objectReference: {fileID: 0}
