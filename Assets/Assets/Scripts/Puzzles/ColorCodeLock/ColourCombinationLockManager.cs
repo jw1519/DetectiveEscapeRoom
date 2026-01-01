@@ -6,6 +6,9 @@ public class ColourCombinationLockManager : MonoBehaviour
     public static event Action CombinationCorrect;
     public string[] correctCombination;
     public string[] currentCombination;
+
+    public GameObject leftDoor;
+    public GameObject rightDoor;
     void Start()
     {
         Rotation.Rotated += CheckCombination;
@@ -49,6 +52,8 @@ public class ColourCombinationLockManager : MonoBehaviour
                 return false;
             }
         }
+        leftDoor.GetComponent<ILock>().unlock();
+        rightDoor.GetComponent<ILock>().unlock();
         return true;
     }
 }
