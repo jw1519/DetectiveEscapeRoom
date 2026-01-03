@@ -3,12 +3,19 @@ using UnityEngine;
 
 public class ColourCombinationLockManager : MonoBehaviour
 {
-    public static event Action CombinationCorrect;
     public string[] correctCombination;
     public string[] currentCombination;
 
     public GameObject leftDoor;
     public GameObject rightDoor;
+    private void OnEnable()
+    {
+        Rotation.Rotated += CheckCombination;
+    }
+    private void OnDisable()
+    {
+        Rotation.Rotated -= CheckCombination;
+    }
     void Start()
     {
         Rotation.Rotated += CheckCombination;
@@ -39,7 +46,6 @@ public class ColourCombinationLockManager : MonoBehaviour
         if (IsCombinationCorrect())
         {
             Debug.Log("Combination Correct! Lock Opened.");
-            CombinationCorrect?.Invoke();
             Destroy(gameObject);
         }
     }
@@ -52,8 +58,10 @@ public class ColourCombinationLockManager : MonoBehaviour
                 return false;
             }
         }
-        leftDoor.GetComponent<ILock>().unlock();
-        rightDoor.GetComponent<ILock>().unlock();
+        if (leftDoor !=null)
+            leftDoor.GetComponent<ILock>().unlock();
+        if (rightDoor !=null)
+            rightDoor.GetComponent<ILock>().unlock();
         return true;
     }
 }

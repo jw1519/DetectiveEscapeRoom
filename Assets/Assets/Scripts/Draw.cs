@@ -11,7 +11,6 @@ public class Draw : MonoBehaviour
     void Start()
     {
         drawManager = GetComponentInParent<DrawManager>();
-        ColourCombinationLockManager.CombinationCorrect += CanOpen;
         drawCollider = GetComponent<Collider>();
     }
     public void CanOpen()

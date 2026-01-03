@@ -21,6 +21,8 @@ public class CabinetDoor : MonoBehaviour
     private void OnMouseDown()
     {
         if (isopen) return;
+        if (!canOpen) return;
+
         if (doorType == DoorType.right)
         {
             OpenRightDoor();

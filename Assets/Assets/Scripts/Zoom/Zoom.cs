@@ -18,8 +18,8 @@ public class Zoom : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject())
             return;
         // check for touch input (mobile)
-        //else if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
-        //    return;
+        else if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+            return;
 
         ZoomIn();
     }
