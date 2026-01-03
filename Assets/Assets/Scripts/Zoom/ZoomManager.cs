@@ -68,7 +68,6 @@ public class ZoomManager : MonoBehaviour
             cam.transform.position = new Vector3(0, 1.6f, 0);
             cam.transform.rotation = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0);
             onZoomOut?.Invoke();
-            Debug.Log($"Invoking from ZoomManager ID: {GetInstanceID()}");
         }
         else //zoom to the previous zoom
         {

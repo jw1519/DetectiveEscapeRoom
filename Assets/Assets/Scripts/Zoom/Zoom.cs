@@ -12,16 +12,16 @@ public class Zoom : MonoBehaviour
     {
         zoomCollider = GetComponent<Collider>();
     }
-    private void OnMouseDown()
+    private void Update()
     {
+        if (!Input.GetMouseButtonDown(0)) return;
+
         // check for UI interaction
-        if (EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
             return;
         // check for touch input (mobile)
         else if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
             return;
-
-        ZoomIn();
     }
     public void ZoomIn()
     {
