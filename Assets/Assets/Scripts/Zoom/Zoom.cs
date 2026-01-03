@@ -14,15 +14,53 @@ public class Zoom : MonoBehaviour
     }
     private void Update()
     {
-        if (!Input.GetMouseButtonDown(0)) return;
-
         // check for UI interaction
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-            return;
         // check for touch input (mobile)
-        else if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
-            return;
+        Ray ray;
+        if (Application.isMobilePlatform)
+        {
+            if (Input.touchCount == 0) return;
+
+            Touch touch = Input.GetTouch(0);
+            if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                return;
+            ray = cam.ScreenPointToRay(touch.position);
+        }
+        else
+        {
+            if (!Input.GetMouseButtonDown(0)) return;
+            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+                return;
+            ray = cam.ScreenPointToRay(Input.mousePosition);
+        }
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            if (hit.collider == zoomCollider)
+            {
+                ZoomIn();
+            }
+        }
     }
+    //private void OnMouseDown()
+    //{
+    //    // check for UI interaction
+    //    // check for touch input (mobile)
+    //    if (Application.isMobilePlatform)
+    //    {
+    //        if (Input.touchCount == 0) return;
+
+    //        Touch touch = Input.GetTouch(0);
+    //        if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+    //            return;
+    //    }
+    //    else
+    //    {
+    //        if (!Input.GetMouseButtonDown(0)) return;
+    //        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+    //            return;
+    //    }
+    //    ZoomIn();
+    //}
     public void ZoomIn()
     {
         if (zoomCollider != null)

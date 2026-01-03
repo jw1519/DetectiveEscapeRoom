@@ -2582,6 +2582,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentZooms: []
   zoomOutButton: {fileID: 619784205}
+  interactableMask:
+    serializedVersion: 2
+    m_Bits: 32
 --- !u!4 &806108809
 Transform:
   m_ObjectHideFlags: 0
@@ -2912,8 +2915,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.152557, y: 1.4605787, z: 2.845884}
-  m_Center: {x: 0.57626355, y: 1.4708407, z: -0.42788315}
+  m_Size: {x: 2.617851, y: 2.8382227, z: 2.845884}
+  m_Center: {x: 0.34361154, y: 1.483489, z: -0.42788312}
 --- !u!1 &893620045
 GameObject:
   m_ObjectHideFlags: 0
@@ -4141,6 +4144,26 @@ PrefabInstance:
     - target: {fileID: 6871741989691767782, guid: 4995dd91264436a49863978e55f96784, type: 3}
       propertyPath: targetPosition.z
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305139860283018513, guid: 4995dd91264436a49863978e55f96784, type: 3}
+      propertyPath: m_Size.y
+      value: 1.9836864
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305139860283018513, guid: 4995dd91264436a49863978e55f96784, type: 3}
+      propertyPath: m_Size.z
+      value: 0.7812618
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305139860283018513, guid: 4995dd91264436a49863978e55f96784, type: 3}
+      propertyPath: m_Center.x
+      value: -0.00000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305139860283018513, guid: 4995dd91264436a49863978e55f96784, type: 3}
+      propertyPath: m_Center.y
+      value: 0.9918474
+      objectReference: {fileID: 0}
+    - target: {fileID: 7305139860283018513, guid: 4995dd91264436a49863978e55f96784, type: 3}
+      propertyPath: m_Center.z
+      value: 0.115967594
       objectReference: {fileID: 0}
     - target: {fileID: 7464349385137665698, guid: 4995dd91264436a49863978e55f96784, type: 3}
       propertyPath: canOpen
