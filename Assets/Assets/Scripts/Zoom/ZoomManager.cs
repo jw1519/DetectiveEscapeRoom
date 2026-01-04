@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ZoomManager : MonoBehaviour
@@ -25,6 +26,31 @@ public class ZoomManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+    private void Update()
+    {
+        // check for UI interaction
+        Ray ray;
+        if (Application.isMobilePlatform)
+        {
+            if (Input.touchCount == 0) return;
+
+            Touch touch = Input.GetTouch(0);
+            if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                return;
+            ray = cam.ScreenPointToRay(touch.position);
+        }
+        else
+        {
+            if (!Input.GetMouseButtonDown(0)) return;
+            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+                return;
+            ray = cam.ScreenPointToRay(Input.mousePosition);
+        }
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            hit.collider.GetComponent<Zoom>()?.ZoomIn();
+        }
     }
     public void RegisterZoom(Zoom zoom)
     {
