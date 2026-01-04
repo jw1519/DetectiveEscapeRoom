@@ -10,10 +10,10 @@ public class ZoomManager : MonoBehaviour
     public List<Zoom> currentZooms = new List<Zoom>();
     public Button zoomOutButton;
 
-    public LayerMask interactableMask;
-
     public event Action onZoomIn;
     public event Action onZoomOut;
+
+    float currentY;
 
     Camera cam => Camera.main;
     private void Awake()
@@ -49,9 +49,11 @@ public class ZoomManager : MonoBehaviour
         }
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
+            currentY = cam.transform.eulerAngles.y;
             hit.collider.GetComponent<Zoom>()?.ZoomIn();
         }
     }
+
     public void RegisterZoom(Zoom zoom)
     {
         if (!currentZooms.Contains(zoom))
@@ -79,7 +81,7 @@ public class ZoomManager : MonoBehaviour
             zoomOutButton.gameObject.SetActive(false);
             cam.fieldOfView = 60; //reset to default zoom
             cam.transform.position = new Vector3(0, 1.6f, 0);
-            cam.transform.rotation = Quaternion.Euler(0, cam.transform.eulerAngles.y, 0);
+            cam.transform.rotation = Quaternion.Euler(0, currentY, 0);
             onZoomOut?.Invoke();
         }
         else //zoom to the previous zoom
