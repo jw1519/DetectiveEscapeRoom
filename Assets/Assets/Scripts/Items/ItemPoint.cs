@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemPoint : MonoBehaviour
 {
     public Item itemNeeded; //the item made for this spot
-    public List<Item> useableItems; //list of items that can be used here that arnt the correct item
+    public List<Item> useableItems; //list of items that can be used here that aren't the correct item
     public GameObject manager;
 
     private void OnMouseDown()
@@ -22,12 +22,14 @@ public class ItemPoint : MonoBehaviour
         {
             item.isInCorrectPosition = true;
             Inventory.Instance.RemoveItem(item);
+            item.PlaceItem(transform);
             Debug.Log("Item used");
         }
         else if (useableItems.Contains(item))
         {
             Debug.Log("Item used but not the correct one");
             Inventory.Instance.RemoveItem(item);
+            item.PlaceItem(transform);
         }
         else
             Debug.Log("cant use that here");

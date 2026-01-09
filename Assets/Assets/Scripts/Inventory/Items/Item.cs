@@ -7,7 +7,8 @@ public class Item : ScriptableObject
     public string itemID;
     public Sprite itemIcon;
     public GameObject itemPrefab;
-    public bool isInCorrectPosition; 
+    public bool isInCorrectPosition;
+    public bool canBePlaced;
     private void OnValidate()
     {
         if (string.IsNullOrEmpty(itemID))
@@ -22,12 +23,13 @@ public class Item : ScriptableObject
     }
     public virtual void UseItem()
     {
-        
     }
     public virtual void PlaceItem(Transform parent)
     {
-        GameObject prefab = Instantiate(itemPrefab, parent.transform.position, Quaternion.identity);
+        GameObject prefab = ItemPool.Instance.GetItem(itemID);
         prefab.transform.SetParent(parent);
+        prefab.transform.localPosition = Vector3.zero;
+        prefab.transform.localRotation = Quaternion.identity;
         Inventory.Instance.RemoveItem(this);
         Inventory.Instance.DeselectItem();
     }

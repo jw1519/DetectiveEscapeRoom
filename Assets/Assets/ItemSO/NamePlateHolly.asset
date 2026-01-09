@@ -16,4 +16,5 @@ MonoBehaviour:
   itemID: NamePlateHolly-2990e5c1-6fe0-4ffb-9383-f679c1ad7ac0
   itemIcon: {fileID: 0}
   itemPrefab: {fileID: 315735827857281995, guid: bf564ab441f1ea94e9d28c54e6471d1c, type: 3}
-  isInCorrectPosition: 0
+  isInCorrectPosition: 1
+  canBePlaced: 1
