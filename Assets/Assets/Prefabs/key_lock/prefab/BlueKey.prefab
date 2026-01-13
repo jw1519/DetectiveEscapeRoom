@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -3633962349256713411}
   - component: {fileID: -1537098396163814143}
   m_Layer: 0
-  m_Name: prf_key_01
+  m_Name: BlueKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

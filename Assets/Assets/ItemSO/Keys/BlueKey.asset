@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce634be95ce40d04ab77e8a4b8d641e4, type: 3}
-  m_Name: NamePlateHolly
+  m_Name: BlueKey
   m_EditorClassIdentifier: 
-  itemName: NamePlateHolly
-  itemID: NamePlateHolly-2990e5c1-6fe0-4ffb-9383-f679c1ad7ac0
+  itemName: Blue Key
+  itemID: Blue Key-db8143c6-cc00-4c27-bdc4-aaea4cd7cb5f
   itemIcon: {fileID: 0}
-  itemPrefab: {fileID: 315735827857281995, guid: bf564ab441f1ea94e9d28c54e6471d1c, type: 3}
+  itemPrefab: {fileID: 6586380701880126115, guid: 9295189b4f03b8a47b9873a8492069d1, type: 3}
   isInCorrectPosition: 0
-  canBePlaced: 1
+  canBePlaced: 0
