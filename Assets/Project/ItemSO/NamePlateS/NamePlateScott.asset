@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce634be95ce40d04ab77e8a4b8d641e4, type: 3}
+  m_Name: NamePlateScott
+  m_EditorClassIdentifier: 
+  itemName: NamePlateScott
+  itemID: NamePlateScott-b8f55dd0-fdd0-464c-895d-1b41a0297e83
+  itemIcon: {fileID: 0}
+  itemPrefab: {fileID: 315735827857281995, guid: bf564ab441f1ea94e9d28c54e6471d1c, type: 3}
+  isInCorrectPosition: 0
+  canBePlaced: 1

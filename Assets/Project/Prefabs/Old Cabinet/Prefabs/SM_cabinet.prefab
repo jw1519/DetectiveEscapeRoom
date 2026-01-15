@@ -143,7 +143,6 @@ GameObject:
   - component: {fileID: 2461912037384544604}
   - component: {fileID: 3251626359727742466}
   - component: {fileID: 6695562459598186714}
-  - component: {fileID: 1790892840649211383}
   m_Layer: 0
   m_Name: cabinet_door_03_Left
   m_TagString: Untagged
@@ -255,20 +254,6 @@ MonoBehaviour:
   zoomView: 60
   rotation: {x: 0, y: 0, z: 0, w: 0}
   targetPosition: {x: 0.4, y: 0.4, z: 0}
---- !u!114 &1790892840649211383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3282356264834113563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be310261b9ae56f4e92c1dccb89a6a3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorType: 1
-  canOpen: 1
 --- !u!1 &5756594446968598142
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +375,6 @@ GameObject:
   - component: {fileID: 8476885123291557630}
   - component: {fileID: 7297391678435959651}
   - component: {fileID: 2968814671751790301}
-  - component: {fileID: 7464349385137665698}
   m_Layer: 0
   m_Name: cabinet_door_04_Right
   m_TagString: Untagged
@@ -502,20 +486,6 @@ MonoBehaviour:
   zoomView: 60
   rotation: {x: 0, y: 0, z: 0, w: 0}
   targetPosition: {x: 0.4, y: 0.4, z: 0}
---- !u!114 &7464349385137665698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7169099134432758471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be310261b9ae56f4e92c1dccb89a6a3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorType: 0
-  canOpen: 1
 --- !u!1 &7906889929764124027
 GameObject:
   m_ObjectHideFlags: 0

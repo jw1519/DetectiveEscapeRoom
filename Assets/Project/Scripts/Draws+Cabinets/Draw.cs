@@ -4,38 +4,45 @@ using UnityEngine.EventSystems;
 
 public class Draw : MonoBehaviour
 {
-    DrawManager drawManager;
-    public Collider drawCollider;
+    Collider drawCollider;
     public bool isOpen = false;
+    public bool canOpen = false;
+    public Vector3 move;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        drawManager = GetComponentInParent<DrawManager>();
         drawCollider = GetComponent<Collider>();
+        ZoomManager.Instance.onZoomOut += CloseDraw;
+    }
+    void OnEnable()
+    {
+        ZoomManager.Instance.onZoomOut += CloseDraw;
+    }
+
+    void OnDisable()
+    {
+        ZoomManager.Instance.onZoomOut -= CloseDraw;
     }
     public void CanOpen()
     {
-        drawCollider.enabled = true;
+        canOpen = true;
     }
     private void OnMouseDown()
     {
-        if (!isOpen)
+        if (!isOpen && canOpen)
         {
             OpenDraw();
         }
     }
     public void OpenDraw()
     {
-        drawManager.CloseAllDraws();
-        Vector3 move = new Vector3(-0.6f, 0, 0);
         transform.Translate(move * 0.5f);
         isOpen = true;
     }
     public void CloseDraw()
     {
         if (!isOpen) return;
-        Vector3 move = new Vector3(0.6f, 0, 0);
-        transform.Translate(move * 0.5f);
+        transform.Translate(-move * 0.5f);
         isOpen = false;
     }
 }
