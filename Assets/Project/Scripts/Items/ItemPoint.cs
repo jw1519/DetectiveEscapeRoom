@@ -22,6 +22,12 @@ public class ItemPoint : MonoBehaviour
         {
             item.isInCorrectPosition = true;
             Inventory.Instance.RemoveItem(item);
+
+            if (item.canBePlaced == false)
+            {
+                GetComponentInParent<ILock>()?.unlock();
+                return;
+            }
             item.PlaceItem(transform);
             Debug.Log("Item used");
         }
