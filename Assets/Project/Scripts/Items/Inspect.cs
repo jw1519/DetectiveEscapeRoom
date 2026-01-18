@@ -34,17 +34,17 @@ public class Inspect : MonoBehaviour
         {
             gameObject.SetActive(true);
             backButton.SetActive(true);
+            item.beingInspected = true;
 
             if (otherButton != null && otherButton.activeInHierarchy)
             {
                 otherButton.SetActive(false);
                 wasActive = true;
             }
-                
 
             objectToInspect.transform.SetParent(transform);
             objectToInspect.transform.localPosition = Vector3.zero;
-            objectToInspect.GetComponent<Collider>().enabled = false;
+            //objectToInspect.GetComponent<Collider>().enabled = false;
             objectToInspect.SetActive(true);
             // keep original position and roation
             cameraPosition = cam.transform.localPosition;
@@ -56,8 +56,9 @@ public class Inspect : MonoBehaviour
     }
     public void DisableInspect()
     {
-        objectToInspect.GetComponent<Collider>().enabled = true;
+        //objectToInspect.GetComponent<Collider>().enabled = true;
         ItemPool.Instance.AddItem(objectToInspect);
+        objectToInspect.GetComponent<WorldItem>().itemSO.beingInspected = false;
 
         objectToInspect = null;
         gameObject.SetActive(false);

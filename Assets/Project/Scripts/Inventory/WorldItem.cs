@@ -4,9 +4,15 @@ public class WorldItem : MonoBehaviour
 {
     public Item itemSO;
 
+    private void Awake()
+    {
+        itemSO = Instantiate(itemSO);
+    }
     private void OnMouseDown()
     {
         if (itemSO == null)
+            return;
+        if (itemSO.beingInspected)
             return;
 
         //pick up item

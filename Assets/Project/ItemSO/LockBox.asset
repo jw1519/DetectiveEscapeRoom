@@ -18,3 +18,4 @@ MonoBehaviour:
   itemPrefab: {fileID: 3758921458764009210, guid: 81ccddbe5f7d58540a67ca886c2db494, type: 3}
   isInCorrectPosition: 0
   canBePlaced: 0
+  beingInspected: 0

@@ -9,6 +9,7 @@ public class Item : ScriptableObject
     public GameObject itemPrefab;
     public bool isInCorrectPosition;
     public bool canBePlaced;
+    public bool beingInspected;
     private void OnValidate()
     {
         if (string.IsNullOrEmpty(itemID))
