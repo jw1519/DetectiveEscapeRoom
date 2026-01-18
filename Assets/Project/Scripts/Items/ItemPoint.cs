@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,6 +25,7 @@ public class ItemPoint : MonoBehaviour
             if (item.canBePlaced == false)
             {
                 GetComponentInParent<ILock>()?.unlock();
+                Destroy(gameObject);
                 return;
             }
             item.PlaceItem(transform);
