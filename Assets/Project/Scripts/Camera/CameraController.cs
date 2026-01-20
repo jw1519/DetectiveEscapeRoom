@@ -16,6 +16,7 @@ public class CameraController : MonoBehaviour
     }
     private void OnEnable()
     {
+        if (ZoomManager.Instance == null) return;
         ZoomManager.Instance.onZoomIn += DisableButtons;
         ZoomManager.Instance.onZoomOut += EnableButtons;
     }

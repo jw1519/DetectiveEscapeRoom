@@ -16,7 +16,8 @@ public class Draw : MonoBehaviour
     }
     void OnEnable()
     {
-        ZoomManager.Instance.onZoomOut += CloseDraw;
+        if (ZoomManager.Instance != null)
+            ZoomManager.Instance.onZoomOut += CloseDraw;
     }
 
     void OnDisable()
