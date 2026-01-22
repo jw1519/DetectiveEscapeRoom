@@ -30,9 +30,6 @@ public class ZoomManager : MonoBehaviour
     private void Update()
     {
         // check for UI interaction
-        if (EventSystem.current != null &&
-        (Input.touchCount > 0 && EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)))
-            return;
 
         Ray ray;
         if (Application.isMobilePlatform)
@@ -72,7 +69,9 @@ public class ZoomManager : MonoBehaviour
         {
             GyroManager.Instance.DisableGyro();
             zoomOutButton.gameObject.SetActive(true);
-            onZoomIn?.Invoke();
+
+            if (!ManagerUI.IsTouchOverUI(Input.mousePosition))
+                onZoomIn?.Invoke();
         }
     }
     public void UnregisterZoom()
