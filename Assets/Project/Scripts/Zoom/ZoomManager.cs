@@ -30,12 +30,20 @@ public class ZoomManager : MonoBehaviour
     private void Update()
     {
         // check for UI interaction
+        if (EventSystem.current != null &&
+        (Input.touchCount > 0 && EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)))
+            return;
+
         Ray ray;
         if (Application.isMobilePlatform)
         {
             if (Input.touchCount == 0) return;
 
+            //Check if touch is over UI
             Touch touch = Input.GetTouch(0);
+
+            if (touch.phase != TouchPhase.Began) return;
+
             if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
                 return;
             ray = cam.ScreenPointToRay(touch.position);

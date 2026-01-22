@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Zoom : MonoBehaviour
 {
@@ -15,6 +14,8 @@ public class Zoom : MonoBehaviour
 
     public void ZoomIn()
     {
+        if (ManagerUI.IsTouchOverUI(Input.mousePosition)) return;
+
         if (zoomCollider != null)
         {
             zoomCollider.enabled = false;

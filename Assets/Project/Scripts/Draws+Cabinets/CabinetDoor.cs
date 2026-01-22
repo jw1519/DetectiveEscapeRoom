@@ -25,6 +25,7 @@ public class CabinetDoor : MonoBehaviour
     {
         if (isopen) return;
         if (!canOpen) return;
+        if (ManagerUI.IsTouchOverUI(Input.mousePosition)) return;
 
         if (doorType == DoorType.right)
         {

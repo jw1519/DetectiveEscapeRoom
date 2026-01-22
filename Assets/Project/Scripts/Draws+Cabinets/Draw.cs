@@ -28,6 +28,7 @@ public class Draw : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        if (ManagerUI.IsTouchOverUI(Input.mousePosition)) return;
         if (!isOpen && canOpen)
         {
             OpenDraw();
