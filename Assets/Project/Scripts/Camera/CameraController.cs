@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
@@ -10,7 +9,7 @@ public class CameraController : MonoBehaviour
         if (GyroManager.Instance.isGyroActive)
         {
             DisableButtons();
-            this.enabled = false;
+            enabled = false;
         }
         ZoomManager.Instance.onZoomIn += DisableButtons;
         ZoomManager.Instance.onZoomOut += EnableButtons;
@@ -41,6 +40,7 @@ public class CameraController : MonoBehaviour
     }
     public void EnableButtons()
     {
+        if (GyroManager.Instance.isGyroActive) return;
         leftButton.SetActive(true);
         rightButton.SetActive(true);
     }

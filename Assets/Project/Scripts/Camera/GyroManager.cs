@@ -14,11 +14,10 @@ public class GyroManager : MonoBehaviour
             Instance = this;
         }
         isGyroActive = false;
+        EnableGyro();
     }
     public void EnableGyro()
     { 
-        if (isGyroActive) return;
-
         if (SystemInfo.supportsGyroscope)
         {
             gyroscope = Input.gyro;
@@ -36,10 +35,7 @@ public class GyroManager : MonoBehaviour
     public void DisableGyro()
     {
         if (!isGyroActive) return;
-        if (SystemInfo.supportsGyroscope)
-        {
-            isGyroActive = false;
-        }
+        isGyroActive = false;
     }
     private void Update()
     {
