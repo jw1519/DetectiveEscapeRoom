@@ -54,7 +54,9 @@ public class ZoomManager : MonoBehaviour
         }
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            currentY = cam.transform.eulerAngles.y;
+            if (currentZooms.Count == 0)
+                currentY = cam.transform.eulerAngles.y;
+
             hit.collider.GetComponent<Zoom>()?.ZoomIn();
         }
     }
