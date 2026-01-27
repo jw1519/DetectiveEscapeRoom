@@ -7,6 +7,8 @@ public class CabinetDoor : MonoBehaviour
     bool isopen = false;
     public bool canOpen;
     public List<GameObject> objectsInCabinet;
+    public rotationAxis axis;
+    Vector3 closedRotation;
     private void Start()
     {
         ZoomManager.Instance.onZoomOut += CloseDoor;
@@ -36,7 +38,19 @@ public class CabinetDoor : MonoBehaviour
     }
     public void OpenRightDoor()
     {
-        gameObject.transform.localRotation = Quaternion.Euler(0, -90, 0);
+        closedRotation = transform.localRotation.eulerAngles;
+        switch (axis)
+        {
+            case rotationAxis.x:
+                transform.localRotation = Quaternion.Euler(-90, transform.localRotation.y, transform.localRotation.z);
+                break;
+            case rotationAxis.y:
+                transform.localRotation = Quaternion.Euler(transform.localRotation.x, -90, transform.localRotation.z);
+                break;
+            case rotationAxis.z:
+                transform.localRotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, -90);
+                break;
+        }
         isopen = true;
         if (objectsInCabinet == null) return;
         foreach (GameObject child in objectsInCabinet)
@@ -49,7 +63,19 @@ public class CabinetDoor : MonoBehaviour
     }
     public void OpenLeftDoor()
     {
-        gameObject.transform.localRotation = Quaternion.Euler(0, 90, 0);
+        closedRotation = transform.localRotation.eulerAngles;
+        switch (axis)
+        {
+            case rotationAxis.x:
+                transform.localRotation = Quaternion.Euler(90, transform.localRotation.y, transform.localRotation.z);
+                break;
+            case rotationAxis.y:
+                transform.localRotation = Quaternion.Euler(transform.localRotation.x, 90, transform.localRotation.z);
+                break;
+            case rotationAxis.z:
+                transform.localRotation = Quaternion.Euler(transform.localRotation.x, transform.localRotation.y, 90);
+                break;
+        }
         isopen = true;
         if (objectsInCabinet == null) return;
         foreach (GameObject child in objectsInCabinet)
@@ -63,11 +89,15 @@ public class CabinetDoor : MonoBehaviour
     public void CloseDoor()
     {
         Debug.Log("Closing door");
-        gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        transform.localRotation = Quaternion.Euler(closedRotation);
         isopen = false;
     }
     public enum DoorType
     {
         right, left,
+    }
+    public enum rotationAxis
+    {
+        x, y, z,
     }
 }

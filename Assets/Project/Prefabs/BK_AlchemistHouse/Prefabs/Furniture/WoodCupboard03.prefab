@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4867953396367456}
+  - component: {fileID: 7338455282007555554}
+  - component: {fileID: 6718423341615585278}
   m_Layer: 0
   m_Name: WoodCupboard03
   m_TagString: Untagged
@@ -24,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017316775514278}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34,7 +36,43 @@ Transform:
   - {fileID: 4453251940334390}
   - {fileID: 4563652210859306}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
+--- !u!65 &7338455282007555554
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017316775514278}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.9431026, y: 1.6543365, z: 2.5654056}
+  m_Center: {x: 0.028448567, y: 0.022812247, z: 1.107561}
+--- !u!114 &6718423341615585278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017316775514278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d988035f161606c46afe4c5dfbdfab00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomView: 60
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1109148902398938
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,7 +99,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109148902398938}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.008847643, y: 6.9388935e-19, z: 0.0046492554}
   m_LocalScale: {x: 0.14090554, y: 0.14958058, z: 0.254}
   m_ConstrainProportionsScale: 0
@@ -132,6 +170,8 @@ GameObject:
   - component: {fileID: 4563652210859306}
   - component: {fileID: 33481704258084892}
   - component: {fileID: 23333815455546768}
+  - component: {fileID: 4749927931495689746}
+  - component: {fileID: 6309648473760906112}
   m_Layer: 0
   m_Name: WoodCupboard03_door2
   m_TagString: Untagged
@@ -147,8 +187,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286915740400614}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.2220175, y: 8.8817837e-17, z: 0.55657774}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.221, y: -0.56, z: 0}
   m_LocalScale: {x: 0.14090554, y: 0.14958058, z: 0.254}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -208,6 +248,43 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4749927931495689746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286915740400614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeef9a44f8f552941be0a52b3dc2187e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorType: 0
+  canOpen: 0
+  objectsInCabinet: []
+  axis: 0
+--- !u!65 &6309648473760906112
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286915740400614}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.78990144, y: 4.1362376, z: 8.487323}
+  m_Center: {x: 0.00031526395, y: 1.7053217, z: 4.242313}
 --- !u!1 &1438529333595508
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598770309157150}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.008847643, y: 6.9388935e-19, z: 0.0046492554}
   m_LocalScale: {x: 0.14090554, y: 0.14958058, z: 0.254}
   m_ConstrainProportionsScale: 0
@@ -561,7 +638,7 @@ Transform:
   m_GameObject: {fileID: 1752013246668912}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.000000042146848, w: 1}
-  m_LocalPosition: {x: 0.01, y: -0, z: -0}
+  m_LocalPosition: {x: 0, y: -0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -631,6 +708,8 @@ GameObject:
   - component: {fileID: 4453251940334390}
   - component: {fileID: 33294563874276216}
   - component: {fileID: 23276972447814266}
+  - component: {fileID: 2138946202235619158}
+  - component: {fileID: 1057114478387633206}
   m_Layer: 0
   m_Name: WoodCupboard03_door1
   m_TagString: Untagged
@@ -646,8 +725,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847485280512392}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.22201692, y: 0, z: -0.55650127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.222, y: 0.56, z: 0}
   m_LocalScale: {x: 0.14090556, y: 0.14958058, z: 0.254}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -707,3 +786,40 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2138946202235619158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847485280512392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeef9a44f8f552941be0a52b3dc2187e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorType: 0
+  canOpen: 0
+  objectsInCabinet: []
+  axis: 0
+--- !u!65 &1057114478387633206
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847485280512392}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.78524077, y: 4.2066936, z: 8.487275}
+  m_Center: {x: 0.0018985276, y: -1.7344086, z: 4.2427926}
