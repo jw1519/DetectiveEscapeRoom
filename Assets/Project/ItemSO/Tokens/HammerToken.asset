@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: HammerToken
   itemID: HammerToken-00f410cd-739d-492a-8a95-3db038bb84d9
   itemIcon: {fileID: 741862902, guid: d196a78db548a344e9798840dbc89847, type: 3}
-  itemPrefab: {fileID: 3919575523944744271, guid: f6dde6565e6df0145b91274bf784bdac, type: 3}
+  itemPrefab: {fileID: 3919575523944744271, guid: e77512cce247c414cb6e1e5d77241261, type: 3}
   isInCorrectPosition: 0
-  canBePlaced: 0
+  canBePlaced: 1
   beingInspected: 0

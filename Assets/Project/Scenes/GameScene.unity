@@ -1068,6 +1068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 134093598}
   - component: {fileID: 134093599}
+  - component: {fileID: 134093600}
   m_Layer: 0
   m_Name: Study
   m_TagString: Untagged
@@ -1111,6 +1112,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.62599343, y: 0.37073904, z: 0.14349833}
   m_Center: {x: -0.17781433, y: 0.055859, z: -0.24817544}
+--- !u!114 &134093600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134093597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a930f0f950e5066478a3a618932c6f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemNeeded: {fileID: 0}
+  useableItems:
+  - {fileID: 11400000, guid: 4d80ed4fb37f3bb4d81708a70a1726d0, type: 2}
+  - {fileID: 11400000, guid: 7c8ad18598591b640a0031e50020a3c6, type: 2}
+  - {fileID: 11400000, guid: 944b8dcd56e2665489cbff205862c393, type: 2}
+  - {fileID: 11400000, guid: f90ce0e6bffe7604bafb8667d47a0fa8, type: 2}
+  - {fileID: 11400000, guid: 28ac625ec7058e84298342bbda551e56, type: 2}
+  manager: {fileID: 0}
 --- !u!1 &136928284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,6 +1307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 193331406}
   - component: {fileID: 193331407}
+  - component: {fileID: 193331408}
   m_Layer: 0
   m_Name: Libary
   m_TagString: Untagged
@@ -1329,6 +1351,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.114725, y: 0.27035886, z: 0.14349833}
   m_Center: {x: -0.42218024, y: 0.0056689084, z: -0.24817544}
+--- !u!114 &193331408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193331405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a930f0f950e5066478a3a618932c6f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemNeeded: {fileID: 0}
+  useableItems:
+  - {fileID: 11400000, guid: 4d80ed4fb37f3bb4d81708a70a1726d0, type: 2}
+  - {fileID: 11400000, guid: 7c8ad18598591b640a0031e50020a3c6, type: 2}
+  - {fileID: 11400000, guid: 944b8dcd56e2665489cbff205862c393, type: 2}
+  - {fileID: 11400000, guid: f90ce0e6bffe7604bafb8667d47a0fa8, type: 2}
+  - {fileID: 11400000, guid: 28ac625ec7058e84298342bbda551e56, type: 2}
+  manager: {fileID: 0}
 --- !u!1 &195340748
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,6 +2083,7 @@ GameObject:
   m_Component:
   - component: {fileID: 378736939}
   - component: {fileID: 378736940}
+  - component: {fileID: 378736941}
   m_Layer: 0
   m_Name: kitchen
   m_TagString: Untagged
@@ -2084,6 +2127,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3962277, y: 0.5317148, z: 0.14349833}
   m_Center: {x: -0.01701498, y: -0.0037824512, z: -0.24817544}
+--- !u!114 &378736941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378736938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a930f0f950e5066478a3a618932c6f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemNeeded: {fileID: 0}
+  useableItems:
+  - {fileID: 11400000, guid: 4d80ed4fb37f3bb4d81708a70a1726d0, type: 2}
+  - {fileID: 11400000, guid: 7c8ad18598591b640a0031e50020a3c6, type: 2}
+  - {fileID: 11400000, guid: 944b8dcd56e2665489cbff205862c393, type: 2}
+  - {fileID: 11400000, guid: f90ce0e6bffe7604bafb8667d47a0fa8, type: 2}
+  - {fileID: 11400000, guid: 28ac625ec7058e84298342bbda551e56, type: 2}
+  manager: {fileID: 0}
 --- !u!1001 &384817805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3864,6 +3927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 766049339}
   - component: {fileID: 766049340}
+  - component: {fileID: 766049341}
   m_Layer: 0
   m_Name: ballroom
   m_TagString: Untagged
@@ -3907,6 +3971,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.600826, y: 0.5317148, z: 0.14349833}
   m_Center: {x: -0.11931427, y: -0.0037824512, z: -0.24817544}
+--- !u!114 &766049341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766049338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a930f0f950e5066478a3a618932c6f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemNeeded: {fileID: 0}
+  useableItems:
+  - {fileID: 11400000, guid: 4d80ed4fb37f3bb4d81708a70a1726d0, type: 2}
+  - {fileID: 11400000, guid: 7c8ad18598591b640a0031e50020a3c6, type: 2}
+  - {fileID: 11400000, guid: 944b8dcd56e2665489cbff205862c393, type: 2}
+  - {fileID: 11400000, guid: f90ce0e6bffe7604bafb8667d47a0fa8, type: 2}
+  - {fileID: 11400000, guid: 28ac625ec7058e84298342bbda551e56, type: 2}
+  manager: {fileID: 0}
 --- !u!1 &771480031
 GameObject:
   m_ObjectHideFlags: 0
@@ -4934,6 +5018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 916618391}
   - component: {fileID: 916618392}
+  - component: {fileID: 916618393}
   m_Layer: 0
   m_Name: Bathroom
   m_TagString: Untagged
@@ -4977,6 +5062,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.44022116, y: 0.36027223, z: 0.14349833}
   m_Center: {x: -0.08492814, y: 0.061092407, z: -0.24817544}
+--- !u!114 &916618393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916618390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a930f0f950e5066478a3a618932c6f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemNeeded: {fileID: 0}
+  useableItems:
+  - {fileID: 11400000, guid: 4d80ed4fb37f3bb4d81708a70a1726d0, type: 2}
+  - {fileID: 11400000, guid: 7c8ad18598591b640a0031e50020a3c6, type: 2}
+  - {fileID: 11400000, guid: 944b8dcd56e2665489cbff205862c393, type: 2}
+  - {fileID: 11400000, guid: f90ce0e6bffe7604bafb8667d47a0fa8, type: 2}
+  - {fileID: 11400000, guid: 28ac625ec7058e84298342bbda551e56, type: 2}
+  manager: {fileID: 0}
 --- !u!1 &919713817 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1921987914802222, guid: f29317c434993d6438c3e92387ec6353, type: 3}
@@ -7931,6 +8036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1517892252}
   - component: {fileID: 1517892253}
+  - component: {fileID: 1517892254}
   m_Layer: 0
   m_Name: conservatory
   m_TagString: Untagged
@@ -7974,6 +8080,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.40616706, y: 0.39158547, z: 0.14349833}
   m_Center: {x: -0.21664375, y: 0.06628221, z: -0.24817544}
+--- !u!114 &1517892254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517892251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a930f0f950e5066478a3a618932c6f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemNeeded: {fileID: 0}
+  useableItems:
+  - {fileID: 11400000, guid: 4d80ed4fb37f3bb4d81708a70a1726d0, type: 2}
+  - {fileID: 11400000, guid: 7c8ad18598591b640a0031e50020a3c6, type: 2}
+  - {fileID: 11400000, guid: 944b8dcd56e2665489cbff205862c393, type: 2}
+  - {fileID: 11400000, guid: f90ce0e6bffe7604bafb8667d47a0fa8, type: 2}
+  - {fileID: 11400000, guid: 28ac625ec7058e84298342bbda551e56, type: 2}
+  manager: {fileID: 0}
 --- !u!1 &1531672988
 GameObject:
   m_ObjectHideFlags: 0
@@ -9677,6 +9803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2132453155}
   - component: {fileID: 2132453156}
+  - component: {fileID: 2132453157}
   m_Layer: 0
   m_Name: DinningRoom
   m_TagString: Untagged
@@ -9720,6 +9847,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.59810805, y: 0.5040126, z: 0.14349833}
   m_Center: {x: -0.21555507, y: 0.12249577, z: -0.24817544}
+--- !u!114 &2132453157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132453154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a930f0f950e5066478a3a618932c6f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemNeeded: {fileID: 0}
+  useableItems:
+  - {fileID: 11400000, guid: 4d80ed4fb37f3bb4d81708a70a1726d0, type: 2}
+  - {fileID: 11400000, guid: 7c8ad18598591b640a0031e50020a3c6, type: 2}
+  - {fileID: 11400000, guid: 944b8dcd56e2665489cbff205862c393, type: 2}
+  - {fileID: 11400000, guid: f90ce0e6bffe7604bafb8667d47a0fa8, type: 2}
+  - {fileID: 11400000, guid: 28ac625ec7058e84298342bbda551e56, type: 2}
+  manager: {fileID: 0}
 --- !u!1001 &2136616589
 PrefabInstance:
   m_ObjectHideFlags: 0

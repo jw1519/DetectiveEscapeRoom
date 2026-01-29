@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8196385531364535030}
   - component: {fileID: 9169710997908715895}
   m_Layer: 0
-  m_Name: Token
+  m_Name: SwordToken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f164e7b75fd4074fbc75b54ec9273c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSO: {fileID: 0}
+  itemSO: {fileID: 11400000, guid: 28ac625ec7058e84298342bbda551e56, type: 2}
 --- !u!1 &5272394593238444283
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +201,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2005133746, guid: d196a78db548a344e9798840dbc89847, type: 3}
+  m_Sprite: {fileID: 401170720, guid: d196a78db548a344e9798840dbc89847, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: DaggerToken
   itemID: DaggerToken-6026ca5d-a5f5-4482-a0c3-d3d894f002ae
   itemIcon: {fileID: 1699327611, guid: d196a78db548a344e9798840dbc89847, type: 3}
-  itemPrefab: {fileID: 3919575523944744271, guid: f6dde6565e6df0145b91274bf784bdac, type: 3}
+  itemPrefab: {fileID: 3919575523944744271, guid: d49b88503814abd448f469fbf6c77123, type: 3}
   isInCorrectPosition: 0
-  canBePlaced: 0
+  canBePlaced: 1
   beingInspected: 0
