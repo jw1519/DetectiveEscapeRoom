@@ -27,7 +27,7 @@ public class WorldItem : MonoBehaviour
         if (itemPoint != null)
         {
             itemPoint.HasAllNeededItems();
-            transform.SetParent(transform);
         }
+        transform.SetParent(null);
     }
 }
