@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce634be95ce40d04ab77e8a4b8d641e4, type: 3}
+  m_Name: SpearToken
+  m_EditorClassIdentifier: 
+  itemName: SpearToken
+  itemID: SpearToken-b2b6413b-8de1-4a54-a897-95879d3541f2
+  itemIcon: {fileID: 2101561256, guid: d196a78db548a344e9798840dbc89847, type: 3}
+  itemPrefab: {fileID: 3919575523944744271, guid: f6dde6565e6df0145b91274bf784bdac, type: 3}
+  isInCorrectPosition: 0
+  canBePlaced: 0
+  beingInspected: 0
