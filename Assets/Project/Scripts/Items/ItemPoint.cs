@@ -17,7 +17,8 @@ public class ItemPoint : MonoBehaviour
     }
     public virtual void UseItemOnPoint(Item item)
     {
-        if (item.itemID == itemNeeded.itemID)
+        Debug.Log(item.itemID);
+        if (itemNeeded != null && item.itemID == itemNeeded.itemID)
         {
             item.isInCorrectPosition = true;
             Inventory.Instance.RemoveItem(item);
@@ -31,7 +32,7 @@ public class ItemPoint : MonoBehaviour
             item.PlaceItem(transform);
             Debug.Log("Item used");
         }
-        else if (useableItems.Contains(item))
+        else if (CheckItem(item))
         {
             Debug.Log("Item used but not the correct one");
             Inventory.Instance.RemoveItem(item);
@@ -39,5 +40,17 @@ public class ItemPoint : MonoBehaviour
         }
         else
             Debug.Log("cant use that here");
+    }
+    // chekc if item is in list
+    public bool CheckItem(Item checkItem)
+    {
+        foreach (Item item in useableItems)
+        {
+            if (checkItem.itemID == item.itemID)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

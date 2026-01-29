@@ -3,10 +3,13 @@ using UnityEngine;
 public class WorldItem : MonoBehaviour
 {
     public Item itemSO;
+    string id;
 
     private void Awake()
     {
+        id = itemSO.itemID;
         itemSO = Instantiate(itemSO);
+        itemSO.itemID = id;
     }
     private void OnMouseDown()
     {
