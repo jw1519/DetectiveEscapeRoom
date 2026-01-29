@@ -27,7 +27,7 @@ public class ChessPuzzle : MonoBehaviour
             if (piece.itemID == item.itemID)
             {
                 //check if item is in correct spot
-                if (piece.itemID == itemPoint.itemNeeded.itemID)
+                if (itemPoint.CheckItemNeeded(item))
                 {
                     item.isInCorrectPosition = true;
                 }

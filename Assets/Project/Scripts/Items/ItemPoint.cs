@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ItemPoint : MonoBehaviour
 {
-    public Item itemNeeded; //the item made for this spot
+    public List<Item> itemNeeded; //the item/items made for this spot
     public List<Item> useableItems; //list of items that can be used here that aren't the correct item
     public GameObject manager;
 
@@ -18,7 +18,7 @@ public class ItemPoint : MonoBehaviour
     public virtual void UseItemOnPoint(Item item)
     {
         Debug.Log(item.itemID);
-        if (itemNeeded != null && item.itemID == itemNeeded.itemID)
+        if (itemNeeded != null && CheckItemNeeded(item))
         {
             item.isInCorrectPosition = true;
             Inventory.Instance.RemoveItem(item);
@@ -45,6 +45,17 @@ public class ItemPoint : MonoBehaviour
     public bool CheckItem(Item checkItem)
     {
         foreach (Item item in useableItems)
+        {
+            if (checkItem.itemID == item.itemID)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    public bool CheckItemNeeded(Item checkItem)
+    {
+        foreach (Item item in itemNeeded)
         {
             if (checkItem.itemID == item.itemID)
             {
