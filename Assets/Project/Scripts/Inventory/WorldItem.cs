@@ -22,5 +22,12 @@ public class WorldItem : MonoBehaviour
         Inventory.Instance.AddItem(itemSO);
         itemSO.isInCorrectPosition = false;
         ItemPool.Instance.AddItem(gameObject);
+
+        ItemPoint itemPoint = transform.parent.GetComponent<ItemPoint>();
+        if (itemPoint != null)
+        {
+            itemPoint.HasAllNeededItems();
+            transform.SetParent(transform);
+        }
     }
 }

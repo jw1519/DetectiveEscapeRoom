@@ -6,6 +6,7 @@ public class ItemPoint : MonoBehaviour
     public List<Item> itemNeeded; //the item/items made for this spot
     public List<Item> useableItems; //list of items that can be used here that aren't the correct item
     public GameObject manager;
+    public bool isComplete;
 
     private void OnMouseDown()
     {
@@ -17,8 +18,8 @@ public class ItemPoint : MonoBehaviour
     }
     public virtual void UseItemOnPoint(Item item)
     {
-        Debug.Log(item.itemID);
-        if (itemNeeded != null && CheckItemNeeded(item))
+        // check if Item is needed for the point
+        if (itemNeeded != null && CheckItemNeeded(item)) 
         {
             item.isInCorrectPosition = true;
             Inventory.Instance.RemoveItem(item);
@@ -30,8 +31,10 @@ public class ItemPoint : MonoBehaviour
                 return;
             }
             item.PlaceItem(transform);
-            Debug.Log("Item used");
+
+            HasAllNeededItems();
         }
+        //check if Item can be used on this point even if its not needed
         else if (CheckItem(item))
         {
             Debug.Log("Item used but not the correct one");
@@ -41,7 +44,7 @@ public class ItemPoint : MonoBehaviour
         else
             Debug.Log("cant use that here");
     }
-    // chekc if item is in list
+    // check if item is usable on this point
     public bool CheckItem(Item checkItem)
     {
         foreach (Item item in useableItems)
@@ -55,6 +58,7 @@ public class ItemPoint : MonoBehaviour
     }
     public bool CheckItemNeeded(Item checkItem)
     {
+        if (itemNeeded == null) return false;
         foreach (Item item in itemNeeded)
         {
             if (checkItem.itemID == item.itemID)
@@ -63,5 +67,26 @@ public class ItemPoint : MonoBehaviour
             }
         }
         return false;
+    }
+    public void HasAllNeededItems()
+    {
+        if (transform.childCount != itemNeeded.Count && transform.childCount != 0)
+        { 
+            isComplete = false;
+            return;
+        }
+
+        foreach (GameObject child in transform)
+        {
+            if (!child.GetComponent<WorldItem>()) continue;
+
+            if (!CheckItem(child.GetComponent<WorldItem>().itemSO))
+            {
+                isComplete = false;
+                return;
+            }
+            
+        }
+        isComplete = true;
     }
 }
