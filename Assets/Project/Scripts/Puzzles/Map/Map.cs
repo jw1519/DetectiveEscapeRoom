@@ -4,18 +4,14 @@ using UnityEngine;
 public class Map : MonoBehaviour
 {
     public List<ItemPoint> rooms;
+    public ILock toUnlock;
     public bool isCompleted => rooms.TrueForAll(room => room.isComplete); // check is all room are complete
 
-
-    void Update()
+    public void Check()
     {
         if (isCompleted)
         {
-            Debug.Log("complete puzzle");
+            toUnlock?.unlock();
         }
-    }
-    public bool Check()
-    {
-        return false;
     }
 }
