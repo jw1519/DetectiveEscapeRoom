@@ -23,9 +23,10 @@ public class WorldItem : MonoBehaviour
         itemSO.isInCorrectPosition = false;
         ItemPool.Instance.AddItem(gameObject);
 
-        ItemPoint itemPoint = transform.parent.GetComponent<ItemPoint>();
-        if (itemPoint != null)
+        
+        if (transform.parent != null && transform.parent.TryGetComponent<ItemPoint>(out var itemPoint))
         {
+            transform.SetParent(null);
             itemPoint.HasAllNeededItems();
         }
         transform.SetParent(null);

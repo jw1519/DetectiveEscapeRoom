@@ -21,22 +21,34 @@ public class ItemPoint : MonoBehaviour
         // check if Item is needed for the point
         if (itemNeeded != null && CheckItemNeeded(item)) 
         {
-            item.isInCorrectPosition = true;
-            Inventory.Instance.RemoveItem(item);
-
             if (item.canBePlaced == false)
             {
                 GetComponentInParent<ILock>()?.unlock();
+                Inventory.Instance.RemoveItem(item);
                 Destroy(gameObject);
                 return;
             }
-            item.PlaceItem(transform);
-
-            HasAllNeededItems();
+            if (itemNeeded.Count == 1 && transform.childCount == 1)
+            {
+                Debug.Log("can't place another item");
+                return;
+            }
+            else
+            {
+                item.isInCorrectPosition = true;
+                Inventory.Instance.RemoveItem(item);
+                item.PlaceItem(transform);
+                HasAllNeededItems();
+            }
         }
         //check if Item can be used on this point even if its not needed
         else if (CheckItem(item))
         {
+            if (itemNeeded.Count == 1 && transform.childCount == 1)
+            {
+                Debug.Log("can't place another item");
+                return;
+            }
             Debug.Log("Item used but not the correct one");
             Inventory.Instance.RemoveItem(item);
             item.PlaceItem(transform);
@@ -70,11 +82,12 @@ public class ItemPoint : MonoBehaviour
     }
     public void HasAllNeededItems()
     {
-        if (transform.childCount != itemNeeded.Count && transform.childCount != 0)
+        if (transform.childCount != itemNeeded.Count || transform.childCount == 0)
         { 
             isComplete = false;
             return;
         }
+        Debug.Log(transform.childCount);
 
         foreach (GameObject child in transform)
         {
