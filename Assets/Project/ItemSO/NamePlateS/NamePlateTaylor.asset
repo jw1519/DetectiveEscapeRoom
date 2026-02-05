@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: NamePlateTaylor
   itemID: NamePlateTaylor-2a1bf3ef-24e5-4348-8636-3d549be85ddf
   itemIcon: {fileID: 0}
-  itemPrefab: {fileID: 315735827857281995, guid: bf564ab441f1ea94e9d28c54e6471d1c, type: 3}
   isInCorrectPosition: 0
   canBePlaced: 1
   beingInspected: 0
+  scale: {x: 1, y: 1, z: 1}

@@ -9,6 +9,7 @@ public class Item : ScriptableObject
     public bool isInCorrectPosition;
     public bool canBePlaced;
     public bool beingInspected;
+    public Vector3 scale;
     private void OnValidate()
     {
         if (string.IsNullOrEmpty(itemID))
@@ -30,6 +31,10 @@ public class Item : ScriptableObject
         prefab.transform.SetParent(parent);
         prefab.transform.localPosition = Vector3.zero;
         prefab.transform.localRotation = Quaternion.identity;
+
+        if (scale != Vector3.zero)
+            prefab.transform.localScale = scale;
+
         Inventory.Instance.RemoveItem(this);
         Inventory.Instance.DeselectItem();
     }

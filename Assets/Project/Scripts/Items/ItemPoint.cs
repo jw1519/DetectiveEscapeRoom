@@ -87,7 +87,6 @@ public class ItemPoint : MonoBehaviour
             isComplete = false;
             return;
         }
-        Debug.Log(transform.childCount);
 
         foreach (GameObject child in transform)
         {
