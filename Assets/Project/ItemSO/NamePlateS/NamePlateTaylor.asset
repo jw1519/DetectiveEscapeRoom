@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce634be95ce40d04ab77e8a4b8d641e4, type: 3}
-  m_Name: NamePlateScott
+  m_Name: NamePlateTaylor
   m_EditorClassIdentifier: 
-  itemName: NamePlateScott
-  itemID: NamePlateScott-b8f55dd0-fdd0-464c-895d-1b41a0297e83
+  itemName: NamePlateTaylor
+  itemID: NamePlateTaylor-2a1bf3ef-24e5-4348-8636-3d549be85ddf
   itemIcon: {fileID: 0}
   itemPrefab: {fileID: 315735827857281995, guid: bf564ab441f1ea94e9d28c54e6471d1c, type: 3}
   isInCorrectPosition: 0
   canBePlaced: 1
+  beingInspected: 0

@@ -6,7 +6,6 @@ public class Item : ScriptableObject
     public string itemName;
     public string itemID;
     public Sprite itemIcon;
-    public GameObject itemPrefab;
     public bool isInCorrectPosition;
     public bool canBePlaced;
     public bool beingInspected;

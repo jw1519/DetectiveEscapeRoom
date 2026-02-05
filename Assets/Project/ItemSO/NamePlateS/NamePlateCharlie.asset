@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce634be95ce40d04ab77e8a4b8d641e4, type: 3}
-  m_Name: NamePlateHolly
+  m_Name: NamePlateCharlie
   m_EditorClassIdentifier: 
-  itemName: NamePlateHolly
-  itemID: NamePlateHolly-2990e5c1-6fe0-4ffb-9383-f679c1ad7ac0
+  itemName: NamePlateCharlie
+  itemID: NamePlateCharlie-0a18e5c2-00f4-40d8-bb35-eb6979ddc0f5
   itemIcon: {fileID: 0}
   itemPrefab: {fileID: 315735827857281995, guid: bf564ab441f1ea94e9d28c54e6471d1c, type: 3}
   isInCorrectPosition: 0
   canBePlaced: 1
+  beingInspected: 0
