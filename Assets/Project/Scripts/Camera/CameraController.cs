@@ -1,7 +1,14 @@
+using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public List<CinemachineCamera> cameras;
+    CinemachineCamera currentCamera;
+    public int currentCameraIndex = 0;
+    CinemachineCamera nextCamera;
+
     public GameObject leftButton;
     public GameObject rightButton;
     private void Start()
@@ -13,6 +20,9 @@ public class CameraController : MonoBehaviour
         }
         ZoomManager.Instance.onZoomIn += DisableButtons;
         ZoomManager.Instance.onZoomOut += EnableButtons;
+
+        currentCamera = cameras.Find(camera => camera.gameObject.activeSelf);
+        currentCameraIndex = cameras.IndexOf(currentCamera);
     }
     private void OnEnable()
     {
@@ -27,11 +37,35 @@ public class CameraController : MonoBehaviour
     }
     public void TurnLeft()
     {
-        gameObject.transform.Rotate(0, -90, 0);
+        currentCamera.gameObject.SetActive(false);
+        currentCameraIndex--;
+        if (currentCameraIndex < 0)
+        {
+            nextCamera = cameras[cameras.Count - 1];
+            currentCameraIndex = cameras.Count - 1;
+        }
+        else
+            nextCamera = cameras[currentCameraIndex];
+
+        nextCamera.gameObject.SetActive(true);
+        currentCamera = nextCamera;
+        //gameObject.transform.Rotate(0, -90, 0);
     }
     public void TurnRight()
     {
-        gameObject.transform.Rotate(0, 90, 0);
+        currentCamera.gameObject.SetActive(false);
+        currentCameraIndex++;
+        if (currentCameraIndex > cameras.Count - 1)
+        {
+            nextCamera = cameras[0];
+            currentCameraIndex = 0;
+        }
+        else
+            nextCamera = cameras[currentCameraIndex];
+
+        nextCamera.gameObject.SetActive(true);
+        currentCamera = nextCamera;
+        //gameObject.transform.Rotate(0, 90, 0);
     }
     public void DisableButtons()
     {
