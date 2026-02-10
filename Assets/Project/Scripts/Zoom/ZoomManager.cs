@@ -13,8 +13,7 @@ public class ZoomManager : MonoBehaviour
     public event Action onZoomIn;
     public event Action onZoomOut;
 
-    float currentY;
-
+    public CameraController cameraController;
     Camera cam => Camera.main;
     private void Awake()
     {
@@ -54,9 +53,6 @@ public class ZoomManager : MonoBehaviour
         }
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            if (currentZooms.Count == 0)
-                currentY = cam.transform.eulerAngles.y;
-
             hit.collider.GetComponent<Zoom>()?.ZoomIn();
         }
     }
@@ -71,9 +67,13 @@ public class ZoomManager : MonoBehaviour
         {
             GyroManager.Instance.DisableGyro();
             zoomOutButton.gameObject.SetActive(true);
-
+            
             if (!ManagerUI.IsTouchOverUI(Input.mousePosition))
+            {
+                cameraController.EnableZoom();
                 onZoomIn?.Invoke();
+            }
+                
         }
     }
     public void UnregisterZoom()
@@ -88,9 +88,7 @@ public class ZoomManager : MonoBehaviour
         {
             GyroManager.Instance.EnableGyro();
             zoomOutButton.gameObject.SetActive(false);
-            cam.fieldOfView = 60; //reset to default zoom
-            cam.transform.position = new Vector3(0, 1.6f, 0);
-            cam.transform.rotation = Quaternion.Euler(0, currentY, 0);
+            cameraController.DisableZoom();
             onZoomOut?.Invoke();
         }
         else //zoom to the previous zoom

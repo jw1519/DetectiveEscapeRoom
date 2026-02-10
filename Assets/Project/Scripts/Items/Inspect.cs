@@ -8,16 +8,20 @@ public class Inspect : MonoBehaviour
     public float rotationSpeed;
     public GameObject backButton;
     public GameObject otherButton;
-    Vector3 cameraPosition;
-    Quaternion cameraRotation;
 
     Vector3 previousMousePosition;
-    Camera cam;
+    CameraController cam;
     private void Awake()
     {
-        instance = this;
-        cam = Camera.main;
-        gameObject.SetActive(false);
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        cam = Camera.main.gameObject.GetComponent<CameraController>();
+        GetComponentInParent<Transform>().gameObject.SetActive(false);
     }
     bool wasActive = false;
     public void EnableInspect(Item item)
@@ -41,19 +45,13 @@ public class Inspect : MonoBehaviour
 
             objectToInspect.transform.SetParent(transform);
             objectToInspect.transform.localPosition = Vector3.zero;
-            //objectToInspect.GetComponent<Collider>().enabled = false;
             objectToInspect.SetActive(true);
-            // keep original position and roation
-            cameraPosition = cam.transform.localPosition;
-            cameraRotation = cam.transform.rotation;
 
-            cam.transform.localPosition = new Vector3(0, 10, 0);
-            cam.transform.rotation = Quaternion.Euler(0, 0, 0);
+            cam.EnableInspect();
         }
     }
     public void DisableInspect()
     {
-        //objectToInspect.GetComponent<Collider>().enabled = true;
         ItemPool.Instance.AddItem(objectToInspect);
         objectToInspect.GetComponent<WorldItem>().itemSO.beingInspected = false;
 
@@ -65,9 +63,7 @@ public class Inspect : MonoBehaviour
             otherButton.SetActive(true);
             wasActive = false;
         }
-        //put camera back
-        cam.transform.localPosition = cameraPosition;
-        cam.transform.rotation = cameraRotation;
+        cam.DisableInspect();
     }
     private void Update()
     {

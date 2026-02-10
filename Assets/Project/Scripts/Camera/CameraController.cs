@@ -8,6 +8,10 @@ public class CameraController : MonoBehaviour
     CinemachineCamera currentCamera;
     public int currentCameraIndex = 0;
     CinemachineCamera nextCamera;
+    CinemachineCamera previousCamera;
+
+    public CinemachineCamera inspectCamera;
+    public CinemachineCamera ZoomCamera;
 
     public GameObject leftButton;
     public GameObject rightButton;
@@ -49,7 +53,6 @@ public class CameraController : MonoBehaviour
 
         nextCamera.gameObject.SetActive(true);
         currentCamera = nextCamera;
-        //gameObject.transform.Rotate(0, -90, 0);
     }
     public void TurnRight()
     {
@@ -65,7 +68,24 @@ public class CameraController : MonoBehaviour
 
         nextCamera.gameObject.SetActive(true);
         currentCamera = nextCamera;
-        //gameObject.transform.Rotate(0, 90, 0);
+    }
+    public void EnableInspect()
+    {
+        previousCamera = currentCamera;
+        currentCamera.gameObject.SetActive(false);
+        currentCamera = inspectCamera;
+        inspectCamera.gameObject.SetActive(true);
+        DisableButtons();
+    }
+    public void DisableInspect()
+    {
+        previousCamera.gameObject.SetActive(true);
+        currentCamera = previousCamera;
+        inspectCamera.gameObject.SetActive(false);
+        if (previousCamera == cameras[currentCameraIndex])
+        {
+            EnableButtons();
+        }
     }
     public void DisableButtons()
     {
@@ -77,5 +97,30 @@ public class CameraController : MonoBehaviour
         if (GyroManager.Instance.isGyroActive) return;
         leftButton.SetActive(true);
         rightButton.SetActive(true);
+    }
+    public void EnableZoom()
+    {
+        previousCamera = currentCamera;
+        currentCamera.gameObject.SetActive(false);
+        currentCamera = ZoomCamera;
+        ZoomCamera.gameObject.SetActive(true);
+        DisableButtons();
+    }
+    public void DisableZoom()
+    {
+        currentCamera = cameras[currentCameraIndex];
+        currentCamera.gameObject.SetActive(true);
+        ZoomCamera.gameObject.SetActive(false);
+        EnableButtons();
+    }
+    public void DisableAllCameras()
+    {
+        foreach (CinemachineCamera cam in cameras)
+        {
+            cam.gameObject.SetActive(false);
+        }
+        inspectCamera.gameObject.SetActive(false);
+        ZoomCamera.gameObject.SetActive(false);
+        DisableButtons();
     }
 }

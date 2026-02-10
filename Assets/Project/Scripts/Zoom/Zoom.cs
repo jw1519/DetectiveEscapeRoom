@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class Zoom : MonoBehaviour
@@ -6,10 +7,11 @@ public class Zoom : MonoBehaviour
     public int zoomView;
     public Quaternion rotation;
     public Vector3 targetPosition;
-    Camera cam => Camera.main;
+    CinemachineCamera cinemachineCamera;
     private void Awake()
     {
         zoomCollider = GetComponent<Collider>();
+        cinemachineCamera = Camera.main.gameObject.GetComponent<CameraController>().ZoomCamera;
     }
 
     public void ZoomIn()
@@ -21,13 +23,13 @@ public class Zoom : MonoBehaviour
         // Apply target position if specified
         if (targetPosition != Vector3.zero)
         {
-            cam.transform.position = targetPosition;
+            cinemachineCamera.transform.position = targetPosition;
         }
-        cam.transform.LookAt(transform, Vector3.up);
+        cinemachineCamera.transform.LookAt(transform, Vector3.up);
         ZoomManager.Instance.RegisterZoom(this);
-        cam.fieldOfView = zoomView;
+        cinemachineCamera.Lens.FieldOfView = zoomView;
         // Apply rotation while maintaining other axes
-        Vector3 currentRotation = cam.transform.rotation.eulerAngles;
+        Vector3 currentRotation = cinemachineCamera.transform.rotation.eulerAngles;
         if (rotation.x != 0)
         {
             currentRotation.x = rotation.x;
@@ -40,7 +42,7 @@ public class Zoom : MonoBehaviour
         {
             currentRotation.z = rotation.z;
         }
-        cam.transform.rotation = Quaternion.Euler(currentRotation);
+        cinemachineCamera.transform.rotation = Quaternion.Euler(currentRotation);
     }
     public void ZoomOut()
     {
