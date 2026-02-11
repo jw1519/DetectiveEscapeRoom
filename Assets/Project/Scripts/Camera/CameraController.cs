@@ -27,6 +27,7 @@ public class CameraController : MonoBehaviour
 
         currentCamera = cameras.Find(camera => camera.gameObject.activeSelf);
         currentCameraIndex = cameras.IndexOf(currentCamera);
+        inspectCamera.gameObject.SetActive(false);
     }
     private void OnEnable()
     {
@@ -71,6 +72,7 @@ public class CameraController : MonoBehaviour
     }
     public void EnableInspect()
     {
+
         previousCamera = currentCamera;
         currentCamera.gameObject.SetActive(false);
         currentCamera = inspectCamera;
@@ -79,6 +81,11 @@ public class CameraController : MonoBehaviour
     }
     public void DisableInspect()
     {
+        if (GyroManager.Instance.isGyroActive)
+        {
+            currentCamera.gameObject.SetActive(false);
+            return;
+        }
         previousCamera.gameObject.SetActive(true);
         currentCamera = previousCamera;
         inspectCamera.gameObject.SetActive(false);
