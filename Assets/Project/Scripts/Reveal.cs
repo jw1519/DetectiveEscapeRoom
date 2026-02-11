@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Reveal : MonoBehaviour
 {
-    public Light lightSource;
+    Light lightSource;
     private void Start()
     {
         lightSource = FindAnyObjectByType<RevealLightSource>().lightSource;
