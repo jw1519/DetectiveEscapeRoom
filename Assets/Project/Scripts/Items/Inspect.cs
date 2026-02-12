@@ -50,19 +50,33 @@ public class Inspect : MonoBehaviour
             cam.EnableInspect();
         }
     }
+    public void RemoveInspectObject(Item item)
+    {
+        ItemPool.Instance.AddItem(objectToInspect);
+        objectToInspect.GetComponent<WorldItem>().itemSO.beingInspected = false;
+        objectToInspect = null;
+        gameObject.SetActive(false);
+        if (wasActive && otherButton != null)
+        {
+            otherButton.SetActive(true);
+            wasActive = false;
+        }
+        EnableInspect(item);
+    }
     public void DisableInspect()
     {
         ItemPool.Instance.AddItem(objectToInspect);
         objectToInspect.GetComponent<WorldItem>().itemSO.beingInspected = false;
-
         objectToInspect = null;
         gameObject.SetActive(false);
+
         backButton.SetActive(false);
         if (wasActive && otherButton != null)
         {
             otherButton.SetActive(true);
             wasActive = false;
         }
+        GyroManager.Instance.EnableGyro();
         cam.DisableInspect();
     }
     private void Update()

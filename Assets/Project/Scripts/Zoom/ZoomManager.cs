@@ -31,26 +31,30 @@ public class ZoomManager : MonoBehaviour
         // check for UI interaction
 
         Ray ray;
-        if (Application.isMobilePlatform)
-        {
-            if (Input.touchCount == 0) return;
+        if (!Input.GetMouseButtonDown(0)) return;
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            return;
+        ray = cam.ScreenPointToRay(Input.mousePosition);
+        //if (Application.isMobilePlatform)
+        //{
+        //    if (Input.touchCount == 0) return;
 
-            //Check if touch is over UI
-            Touch touch = Input.GetTouch(0);
+        //    //Check if touch is over UI
+        //    Touch touch = Input.GetTouch(0);
 
-            if (touch.phase != TouchPhase.Began) return;
+        //    if (touch.phase != TouchPhase.Began) return;
 
-            if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
-                return;
-            ray = cam.ScreenPointToRay(touch.position);
-        }
-        else
-        {
-            if (!Input.GetMouseButtonDown(0)) return;
-            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-                return;
-            ray = cam.ScreenPointToRay(Input.mousePosition);
-        }
+        //    if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+        //        return;
+        //    ray = cam.ScreenPointToRay(touch.position);
+        //}
+        //else
+        //{
+        //    if (!Input.GetMouseButtonDown(0)) return;
+        //    if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        //        return;
+        //    ray = cam.ScreenPointToRay(Input.mousePosition);
+        //}
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             hit.collider.GetComponent<Zoom>()?.ZoomIn();
@@ -67,13 +71,14 @@ public class ZoomManager : MonoBehaviour
         {
             GyroManager.Instance.DisableGyro();
             zoomOutButton.gameObject.SetActive(true);
-            
-            if (!ManagerUI.IsTouchOverUI(Input.mousePosition))
+
+            if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
             {
-                cameraController.EnableZoom();
-                onZoomIn?.Invoke();
+                if (!ManagerUI.IsTouchOverUI(Input.mousePosition))
+                {
+                    onZoomIn?.Invoke();
+                }
             }
-                
         }
     }
     public void UnregisterZoom()
@@ -87,8 +92,11 @@ public class ZoomManager : MonoBehaviour
         if (currentZooms.Count == 0)
         {
             GyroManager.Instance.EnableGyro();
+            if (GyroManager.Instance.isGyroActive)
+            {
+                Camera.main.gameObject.transform.position = new Vector3(0, 1.2f, 0);
+            }
             zoomOutButton.gameObject.SetActive(false);
-            cameraController.DisableZoom();
             onZoomOut?.Invoke();
         }
         else //zoom to the previous zoom
