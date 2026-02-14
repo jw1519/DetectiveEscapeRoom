@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33590061293730318}
   - component: {fileID: 23605074525839834}
   - component: {fileID: 2424563855284485315}
-  - component: {fileID: 9005715905234788441}
+  - component: {fileID: 3714105540762257694}
   m_Layer: 0
   m_Name: Basket01
   m_TagString: Untagged
@@ -111,7 +111,7 @@ CapsuleCollider:
   m_Height: 0.47520083
   m_Direction: 1
   m_Center: {x: -0.000000074505806, y: 0.000000014901161, z: 0.11218956}
---- !u!114 &9005715905234788441
+--- !u!114 &3714105540762257694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
