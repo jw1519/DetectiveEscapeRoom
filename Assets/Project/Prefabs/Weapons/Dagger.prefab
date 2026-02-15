@@ -135,14 +135,14 @@ PrefabInstance:
     - target: {fileID: 1775993042342400696, guid: 7523a2d9ae9051247b68ba1d069ac5f8, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 64908345752e0f04687827939c90db3c, type: 2}
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 4270060945070430728, guid: 7523a2d9ae9051247b68ba1d069ac5f8, type: 3}
       propertyPath: m_Name
       value: tagPrfab
       objectReference: {fileID: 0}
     - target: {fileID: 5160359439585414767, guid: 7523a2d9ae9051247b68ba1d069ac5f8, type: 3}
       propertyPath: m_text
-      value: return to Ballroom
+      value: Bathroom
       objectReference: {fileID: 0}
     - target: {fileID: 5160359439585414767, guid: 7523a2d9ae9051247b68ba1d069ac5f8, type: 3}
       propertyPath: m_fontSize
