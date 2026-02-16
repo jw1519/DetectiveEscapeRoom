@@ -53,6 +53,7 @@ public class Zoom : MonoBehaviour
     }
     private void OnDestroy()
     {
+        ZoomManager.Instance.UnregisterZoom();
         ZoomManager.Instance.currentZooms.Remove(this);
     }
 }

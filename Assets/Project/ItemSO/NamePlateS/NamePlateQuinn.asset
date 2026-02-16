@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce634be95ce40d04ab77e8a4b8d641e4, type: 3}
-  m_Name: NamePlateTaylor 3
+  m_Name: NamePlateQuinn
   m_EditorClassIdentifier: 
-  itemName: NamePlateWren
-  itemID: NamePlateWren-07840ad5-33fb-4cdd-9ae6-aaab70c48283
+  itemName: NamePlateQuinn
+  itemID: NamePlateQuinn-26d6ea66-59ca-44d8-bb64-675765737684
   itemIcon: {fileID: 0}
   isInCorrectPosition: 0
   canBePlaced: 1

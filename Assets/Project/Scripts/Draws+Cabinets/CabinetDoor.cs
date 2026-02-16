@@ -88,7 +88,6 @@ public class CabinetDoor : MonoBehaviour
     }
     public void CloseDoor()
     {
-        Debug.Log("Closing door");
         transform.localRotation = Quaternion.Euler(closedRotation);
         isopen = false;
     }

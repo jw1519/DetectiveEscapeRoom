@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce634be95ce40d04ab77e8a4b8d641e4, type: 3}
-  m_Name: NamePlateTaylor 4
+  m_Name: NamePlateRiver
   m_EditorClassIdentifier: 
   itemName: NamePlateRiver
   itemID: NamePlateRiver-05647ee9-a1b2-449e-959e-e0a0ac778ff4
