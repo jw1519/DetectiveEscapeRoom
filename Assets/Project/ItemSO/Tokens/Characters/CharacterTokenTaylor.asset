@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce634be95ce40d04ab77e8a4b8d641e4, type: 3}
-  m_Name: CharacterToken 1
+  m_Name: CharacterTokenTaylor
   m_EditorClassIdentifier: 
-  itemName: AlexToken
-  itemID: AlexToken-ecd01cd7-6b94-4f10-91b0-6fce47a6fa98
-  itemIcon: {fileID: 21300000, guid: b2258351049baed4eaae1fc42cb7771f, type: 3}
+  itemName: TaylorToken
+  itemID: TaylorToken-baaf7fa0-5e60-451c-9dfb-5014db0b0303
+  itemIcon: {fileID: 21300000, guid: c8a97195a4434a24cb96eae613176329, type: 3}
   isInCorrectPosition: 0
   canBePlaced: 1
   beingInspected: 0

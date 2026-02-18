@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce634be95ce40d04ab77e8a4b8d641e4, type: 3}
-  m_Name: CharacterToken 4
+  m_Name: CharacterTokenWren
   m_EditorClassIdentifier: 
-  itemName: RiverToken
-  itemID: RiverToken-be50568e-9890-4b3d-b55d-f0f715cde952
-  itemIcon: {fileID: 21300000, guid: 20a9f1cec94a9fb45817373362b6274c, type: 3}
+  itemName: WrenToken
+  itemID: WrenToken-017955f4-5977-44ad-80b8-133739caffd3
+  itemIcon: {fileID: 21300000, guid: 5193209416597c543aeeda857521a1ea, type: 3}
   isInCorrectPosition: 0
   canBePlaced: 1
   beingInspected: 0

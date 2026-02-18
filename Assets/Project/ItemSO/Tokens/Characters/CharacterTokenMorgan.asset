@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce634be95ce40d04ab77e8a4b8d641e4, type: 3}
-  m_Name: CharacterToken 7
+  m_Name: CharacterTokenMorgan
   m_EditorClassIdentifier: 
-  itemName: WrenToken
-  itemID: WrenToken-017955f4-5977-44ad-80b8-133739caffd3
-  itemIcon: {fileID: 21300000, guid: 5193209416597c543aeeda857521a1ea, type: 3}
+  itemName: MorganToken
+  itemID: MorganToken-6d14bfef-f4ff-4c8f-b563-3bfaeedb62b2
+  itemIcon: {fileID: 21300000, guid: 4b7f92bfee3c09944a661bfd475e57ae, type: 3}
   isInCorrectPosition: 0
   canBePlaced: 1
   beingInspected: 0

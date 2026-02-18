@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce634be95ce40d04ab77e8a4b8d641e4, type: 3}
-  m_Name: CharacterToken 5
+  m_Name: CharacterTokenSam
   m_EditorClassIdentifier: 
   itemName: SamToken
   itemID: SamToken-b2c4ad4c-ab08-42aa-9ca3-0213ab12359c
