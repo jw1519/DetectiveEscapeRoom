@@ -4,10 +4,19 @@ using UnityEngine;
 public class KeyPad : MonoBehaviour
 {
     public static event Action<string> inputChanged;
-    public static string correctCode = "1234";
+    public static string correctCode = "1562";
     public static string playerInput = "";
     // Update is called once per frame
-    void Update()
+    public void OnMouseDown()
+    {
+        if (playerInput.Length != correctCode.Length)
+        {
+            playerInput += gameObject.name;
+            inputChanged?.Invoke(playerInput);
+            Check();
+        }
+    }
+    public void Check()
     {
         if (playerInput.Length == correctCode.Length)
         {
@@ -22,14 +31,6 @@ public class KeyPad : MonoBehaviour
                 inputChanged?.Invoke("Incorrect");
                 playerInput = "";
             }
-        }
-    }
-    private void OnMouseDown()
-    {
-        if (playerInput.Length != correctCode.Length)
-        {
-            playerInput += gameObject.name;
-            inputChanged?.Invoke(playerInput);
         }
     }
 }
