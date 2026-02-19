@@ -7,7 +7,11 @@ public class ItemPoint : MonoBehaviour
     public List<Item> useableItems; //list of items that can be used here that aren't the correct item
     public GameObject manager;
     public bool isComplete;
-
+    public int maxItems;
+    private void Awake()
+    {
+        maxItems = itemNeeded.Count;
+    }
     private void OnMouseDown()
     {
         Item item = Inventory.Instance.selectedItem;
@@ -28,7 +32,7 @@ public class ItemPoint : MonoBehaviour
                 Destroy(gameObject);
                 return;
             }
-            if (itemNeeded.Count == 1 && transform.childCount == 1)
+            if (maxItems == 1 && transform.childCount == 1)
             {
                 Debug.Log("can't place another item");
                 return;

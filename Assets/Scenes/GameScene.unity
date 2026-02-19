@@ -6455,12 +6455,12 @@ PrefabInstance:
       propertyPath: m_text
       value: 'The detective was writing down her findings.
 
-        Her glasses kept
-        falling down'
+        She stayed in
+        the ballroom asking questions to Morgan'
       objectReference: {fileID: 0}
     - target: {fileID: 5645837551187160410, guid: e5e329ae25741434080c2abacac024fd, type: 3}
       propertyPath: m_fontSize
-      value: 1.3
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5645837551187160410, guid: e5e329ae25741434080c2abacac024fd, type: 3}
       propertyPath: m_VerticalAlignment
@@ -17636,12 +17636,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 838751892664288120, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
       propertyPath: itemNeeded.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 838751892664288120, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
       propertyPath: 'itemNeeded.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 4d80ed4fb37f3bb4d81708a70a1726d0, type: 2}
+    - target: {fileID: 838751892664288120, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
+      propertyPath: 'itemNeeded.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 5351b0e58e19f2f459a50dff9d5e1b12, type: 2}
+    - target: {fileID: 838751892664288120, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
+      propertyPath: 'itemNeeded.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a7c9318cbccd7214887dd24f569d33c7, type: 2}
     - target: {fileID: 5499287608162469441, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.4508753
