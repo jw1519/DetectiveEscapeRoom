@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Dagger
   itemID: Dagger-58efa77d-5d3f-4d4b-9365-b3fb8b8197db
-  itemIcon: {fileID: 0}
-  itemPrefab: {fileID: 9055439197933027720, guid: ac9fb240b05c88843b0692c49ff23cbe, type: 3}
+  itemIcon: {fileID: 21300000, guid: 8dd47df88829eb04a8e81955ef8a6ba1, type: 3}
   isInCorrectPosition: 0
+  canBePlaced: 0
+  beingInspected: 0
+  scale: {x: 0, y: 0, z: 0}

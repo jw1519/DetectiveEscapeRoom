@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: NamePlateQuinn
   itemID: NamePlateQuinn-26d6ea66-59ca-44d8-bb64-675765737684
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 426decffaab9ceb4db18d8d87bda4774, type: 3}
   isInCorrectPosition: 0
   canBePlaced: 1
   beingInspected: 0

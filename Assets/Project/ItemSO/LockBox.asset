@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: LockBox
   itemID: LockBox-52b95b98-6013-43a7-a2ab-f499d6d3f9fc
-  itemIcon: {fileID: 0}
-  itemPrefab: {fileID: 3758921458764009210, guid: 81ccddbe5f7d58540a67ca886c2db494, type: 3}
+  itemIcon: {fileID: 21300000, guid: ec81301f82854da45a62da70520f42e8, type: 3}
   isInCorrectPosition: 0
   canBePlaced: 0
   beingInspected: 0
+  scale: {x: 0, y: 0, z: 0}

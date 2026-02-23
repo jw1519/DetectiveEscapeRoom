@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Black Key
   itemID: Black Key-3dfb41e3-f9ab-4e37-a3e4-9fce7db63002
-  itemIcon: {fileID: 0}
-  itemPrefab: {fileID: 3874798687770068871, guid: 974c90fb5c85e1145b28c692035ab2f2, type: 3}
+  itemIcon: {fileID: 21300000, guid: 78ad81eeb63516545b7d6c4d54a6f09d, type: 3}
   isInCorrectPosition: 0
   canBePlaced: 0
+  beingInspected: 0
+  scale: {x: 0, y: 0, z: 0}

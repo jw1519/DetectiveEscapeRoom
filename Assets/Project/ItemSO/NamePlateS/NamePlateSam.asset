@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: NamePlateSam
   itemID: NamePlateSam-40a0691d-ef14-4309-a977-796c70ee437e
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 0561474d60fa54e4788156e9f419c588, type: 3}
   isInCorrectPosition: 0
   canBePlaced: 1
   beingInspected: 0

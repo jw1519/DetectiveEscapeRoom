@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Spear
   itemID: Spear-c52874f1-18fa-40a6-8ac4-abf9632b13e2
-  itemIcon: {fileID: 0}
-  itemPrefab: {fileID: 8303348358644969391, guid: 9fb39c598d8bb8f4b92467a226228950, type: 3}
+  itemIcon: {fileID: 21300000, guid: 311b746886706c84fb5cde232713bc93, type: 3}
   isInCorrectPosition: 0
+  canBePlaced: 0
+  beingInspected: 0
+  scale: {x: 0, y: 0, z: 0}

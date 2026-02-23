@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Hammer
   itemID: Hammer-3777f572-ae11-4d63-9a42-03bdc7ab4247
-  itemIcon: {fileID: 0}
-  itemPrefab: {fileID: 7015192193990208909, guid: 59570d3b315a4ae418eb60e479ddc9b8, type: 3}
+  itemIcon: {fileID: 21300000, guid: 6e294c9f9493e28428e83980e0754356, type: 3}
   isInCorrectPosition: 0
+  canBePlaced: 0
+  beingInspected: 0
+  scale: {x: 0, y: 0, z: 0}

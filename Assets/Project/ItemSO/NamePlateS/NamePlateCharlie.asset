@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: NamePlateCharlie
   itemID: NamePlateCharlie-0a18e5c2-00f4-40d8-bb35-eb6979ddc0f5
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 9e135eace7195234f8b2d06be7b4ac87, type: 3}
   isInCorrectPosition: 0
   canBePlaced: 1
   beingInspected: 0

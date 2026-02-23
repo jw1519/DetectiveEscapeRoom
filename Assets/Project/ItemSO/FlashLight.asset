@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: FlashLight
   itemID: FlashLight-9bf2b0f0-d9f1-4b24-9a0e-7b4c9f711d85
-  itemIcon: {fileID: 0}
-  itemPrefab: {fileID: 1002705123656268, guid: d86ca2f4159e6a942abd8dfc52b38395, type: 3}
+  itemIcon: {fileID: 21300000, guid: 555b886de102a4d48aeb878b18fea9d5, type: 3}
   isInCorrectPosition: 0
+  canBePlaced: 0
+  beingInspected: 0
+  scale: {x: 0, y: 0, z: 0}

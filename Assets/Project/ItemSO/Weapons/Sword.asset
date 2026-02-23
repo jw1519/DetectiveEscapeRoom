@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Sword
   itemID: Sword-97bfc61d-a2ea-4836-84fd-f07af83c7235
-  itemIcon: {fileID: 0}
-  itemPrefab: {fileID: 8678794878619684989, guid: 71a0c097329e8ba4d89beed88b0046bb, type: 3}
+  itemIcon: {fileID: 21300000, guid: caf8c2299df5e344d9c97892d2f2378c, type: 3}
   isInCorrectPosition: 0
+  canBePlaced: 0
+  beingInspected: 0
+  scale: {x: 0, y: 0, z: 0}

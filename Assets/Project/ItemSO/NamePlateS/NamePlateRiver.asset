@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: NamePlateRiver
   itemID: NamePlateRiver-05647ee9-a1b2-449e-959e-e0a0ac778ff4
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 61580db17abf62f41887b5f54ebf0313, type: 3}
   isInCorrectPosition: 0
   canBePlaced: 1
   beingInspected: 0
