@@ -15,7 +15,7 @@ public class PuzzleTile : MonoBehaviour
     void Start()
     {
         isInCorrectPosition = false;
-        correctPosition = int.Parse(gameObject.name); // Assuming the tile's name is set to its correct position
+        //correctPosition = int.Parse(gameObject.name); // Assuming the tile's name is set to its correct position
         CheckIfInCorrectPosition();
     }
     private void OnMouseDown()
