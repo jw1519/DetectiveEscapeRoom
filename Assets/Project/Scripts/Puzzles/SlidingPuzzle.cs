@@ -70,25 +70,23 @@ public class SlidingPuzzle : MonoBehaviour
 
         if (tiles[tileIndex].GetComponent<PuzzleTile>().isEmptyTile) //if tile is empty dont move
             return false;
-        if ((tileIndex + 1) % gridSize != 0)
+
+        GameObject tileGO = tile.gameObject;
+
+        if ((tileIndex + 1) <= tiles.Count - 1) //right
         {
-            if (tileIndex + 1 <= tiles.Count && tiles[tileIndex + 1].GetComponent<PuzzleTile>().isEmptyTile) //check right
+            if (tileIndex + 1 <= tiles.Count && tiles[tileIndex + 1].GetComponent<PuzzleTile>().isEmptyTile) 
                 return true;
         }
-        if (tileIndex % gridSize != 0) //if tile is on the left edge, it cannot check left
+        if ((tileIndex - 1) >= 0) //left
         {
-            if (tiles[tileIndex - 1] != null && tiles[tileIndex - 1].GetComponent<PuzzleTile>().isEmptyTile) //check left
-            return true;
-        }
-        if (tileIndex + gridSize <= tiles.Count)
-        {
-            if (tiles[tileIndex + gridSize] != null && tiles[tileIndex + gridSize].GetComponent<PuzzleTile>().isEmptyTile) //check down
+            if (tiles[tileIndex - 1] != null && tiles[tileIndex - 1].GetComponent<PuzzleTile>().isEmptyTile) 
                 return true;
         }
-        else if (tileIndex + gridSize > tiles.Count) //if tile is on the bottom edge, it cannot check down
+        //down
+        if (tileIndex + gridSize <= tiles.Count - 1)
         {
-            int tileToCheck = tileIndex + gridSize - tiles.Count;
-            if (tiles[tileToCheck] != null && tiles[tileToCheck].GetComponent<PuzzleTile>().isEmptyTile) //check down for edge case when tile is on the bottom row
+            if (tiles[tileIndex + gridSize] != null && tiles[tileIndex + gridSize].GetComponent<PuzzleTile>().isEmptyTile)
                 return true;
         }
         if (tileIndex - gridSize >= 0)
@@ -96,13 +94,7 @@ public class SlidingPuzzle : MonoBehaviour
             if (tiles[tileIndex - gridSize] != null && tiles[tileIndex - gridSize].GetComponent<PuzzleTile>().isEmptyTile) //check up
                 return true;
         }
-        else if (tileIndex - gridSize < 0) //if tile is on the top edge, it cannot check up
-        {
-            int tileToCheck = tileIndex - gridSize + tiles.Count;
-            if (tiles[tileToCheck] != null && tiles[tileToCheck].GetComponent<PuzzleTile>().isEmptyTile) //check up for edge case when tile is on the top row
-                return true;
-        }
-
+        Debug.Log(tileIndex);
         return false;
     }
     public void HandleTileMoveAttempt(PuzzleTile tile)

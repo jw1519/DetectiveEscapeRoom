@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PuzzleTile : MonoBehaviour
 {
+    public SlidingPuzzle parentPuzzle;
     public int correctPosition; //the number indicating the correct position of the tile in the grid, starting from 0
     public int currentPosition;
 

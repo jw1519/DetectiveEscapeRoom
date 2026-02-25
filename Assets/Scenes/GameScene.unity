@@ -2336,6 +2336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285fb212596bdf04a9daa4437d3b6920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentPuzzle: {fileID: 0}
   correctPosition: 3
   currentPosition: 6
   isEmptyTile: 0
@@ -3311,6 +3312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285fb212596bdf04a9daa4437d3b6920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentPuzzle: {fileID: 0}
   correctPosition: 4
   currentPosition: 2
   isEmptyTile: 0
@@ -11593,6 +11595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285fb212596bdf04a9daa4437d3b6920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentPuzzle: {fileID: 0}
   correctPosition: 6
   currentPosition: 8
   isEmptyTile: 1
@@ -11957,6 +11960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285fb212596bdf04a9daa4437d3b6920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentPuzzle: {fileID: 0}
   correctPosition: 7
   currentPosition: 0
   isEmptyTile: 0
@@ -14629,8 +14633,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285fb212596bdf04a9daa4437d3b6920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correctPosition: 3
-  currentPosition: 5
+  parentPuzzle: {fileID: 0}
+  correctPosition: 5
+  currentPosition: 3
   isEmptyTile: 0
   isInCorrectPosition: 0
 --- !u!65 &1506821854
@@ -16099,6 +16104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285fb212596bdf04a9daa4437d3b6920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentPuzzle: {fileID: 0}
   correctPosition: 8
   currentPosition: 7
   isEmptyTile: 0
@@ -18842,6 +18848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285fb212596bdf04a9daa4437d3b6920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentPuzzle: {fileID: 0}
   correctPosition: 2
   currentPosition: 1
   isEmptyTile: 0
@@ -19284,9 +19291,9 @@ MonoBehaviour:
   - {fileID: 1237670976}
   - {fileID: 2133950871}
   - {fileID: 322189404}
+  - {fileID: 1506821851}
   - {fileID: 5250264377167674442}
   - {fileID: 6559253286475039190}
-  - {fileID: 1506821851}
   - {fileID: 239259795}
   - {fileID: 1689667176}
   - {fileID: 1168894445}
@@ -19644,6 +19651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285fb212596bdf04a9daa4437d3b6920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentPuzzle: {fileID: 0}
   correctPosition: 1
   currentPosition: 4
   isEmptyTile: 0
@@ -19660,6 +19668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 285fb212596bdf04a9daa4437d3b6920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentPuzzle: {fileID: 0}
   correctPosition: 0
   currentPosition: 5
   isEmptyTile: 0
