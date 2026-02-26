@@ -53,13 +53,14 @@ public class SlidingPuzzle : MonoBehaviour
     public void ShuffleTiles()
     {
         int count = 0;
-        while (count < (gridSize * gridSize * gridSize))
+        while (count < (gridSize * gridSize) * gridSize)
         {
             int random = Random.Range(0, gridSize * gridSize - 1);
             PuzzleTile tile = tiles[random].GetComponent<PuzzleTile>();
             if (IsAdjacentToEmpty(tile))
             {
                 HandleTileMoveAttempt(tile);
+                count++;
             }
         }
         foreach (GameObject tile in tiles)
