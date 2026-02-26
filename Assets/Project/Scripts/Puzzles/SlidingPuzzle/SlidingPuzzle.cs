@@ -9,8 +9,9 @@ public class SlidingPuzzle : MonoBehaviour
     public GameObject TilePrefab;
     public List<GameObject> tiles; // List of tile GameObjects, including the empty space
     public float spacing = 1.1f; // Spacing between tiles
+    public GameObject Reward;
 
-    public Sprite[] tileSprites; // List of sprites for the tiles, should be assigned in the inspector
+    public List<Sprite> sprites; //tile sprites
     private void OnEnable()
     {
         PuzzleTile.OnAttemptTileMoved += HandleTileMoveAttempt;
@@ -23,12 +24,12 @@ public class SlidingPuzzle : MonoBehaviour
     }
     private void Awake()
     {
-        //CreateBoard();
+        CreateBoard();
     }
     public void CreateBoard()
     {
         tileParent.localPosition = new Vector3(-spacing, -spacing, 0);
-        int tileIndex = 0;
+        int tileIndex = sprites.Count - 1;
         for (int x = 0; x < gridSize; x++)
         {
             for (int y = 0; y < gridSize; y++)
@@ -37,22 +38,41 @@ public class SlidingPuzzle : MonoBehaviour
 
                 GameObject prefabInstance = Instantiate(TilePrefab, tileParent);
                 prefabInstance.transform.localPosition = pos;
-                prefabInstance.GetComponentInChildren<SpriteRenderer>().sprite = tileSprites[tileIndex]; // Assign the corresponding sprite to the tile
+
+                prefabInstance.GetComponentInChildren<SpriteRenderer>().sprite = sprites[tileIndex]; // Assign the corresponding sprite to the tile
                 prefabInstance.name = tileIndex.ToString(); // Set the name to the tile index for correct position reference
-                tileIndex++;
-                tiles.Add(prefabInstance);
+                prefabInstance.GetComponent<PuzzleTile>().SetValues();
+                tiles[tileIndex] = prefabInstance;
+                tileIndex--;
             }
         }
         int index = tiles.Count - 1;
-        tiles[index].SetActive(false); // Hide the last tile to create the empty space
-        tiles[index].GetComponent<PuzzleTile>().isEmptyTile = true; // Set the last tile as the empty space
+        tiles[index].GetComponent<PuzzleTile>().SetEmpty();
+        ShuffleTiles();
+    }
+    public void ShuffleTiles()
+    {
+        int count = 0;
+        while (count < (gridSize * gridSize * gridSize))
+        {
+            int random = Random.Range(0, gridSize * gridSize - 1);
+            PuzzleTile tile = tiles[random].GetComponent<PuzzleTile>();
+            if (IsAdjacentToEmpty(tile))
+            {
+                HandleTileMoveAttempt(tile);
+            }
+        }
+        foreach (GameObject tile in tiles)
+        {
+            tile.GetComponent<PuzzleTile>().SetValues();
+        }
     }
     public void CheckSolved()
     {
         if (IsSolved())
         {
             Debug.Log("Puzzle Solved!");
-            // Additional logic for when the puzzle is solved (e.g., trigger an event, show a message, etc.)
+            Reward.SetActive(true);
         }
     }
     public bool IsSolved()
@@ -73,12 +93,12 @@ public class SlidingPuzzle : MonoBehaviour
 
         GameObject tileGO = tile.gameObject;
 
-        if ((tileIndex + 1) <= tiles.Count - 1) //right
+        if ((tileIndex + 1) <= tiles.Count - 1 && (tileIndex + 1) % gridSize != 0) //check right, check if tile index + 1 is divisable by gridsize
         {
             if (tileIndex + 1 <= tiles.Count && tiles[tileIndex + 1].GetComponent<PuzzleTile>().isEmptyTile) 
                 return true;
         }
-        if ((tileIndex - 1) >= 0) //left
+        if ((tileIndex - 1) >= 0 && tileIndex % gridSize != 0) //left
         {
             if (tiles[tileIndex - 1] != null && tiles[tileIndex - 1].GetComponent<PuzzleTile>().isEmptyTile) 
                 return true;
@@ -94,7 +114,6 @@ public class SlidingPuzzle : MonoBehaviour
             if (tiles[tileIndex - gridSize] != null && tiles[tileIndex - gridSize].GetComponent<PuzzleTile>().isEmptyTile) //check up
                 return true;
         }
-        Debug.Log(tileIndex);
         return false;
     }
     public void HandleTileMoveAttempt(PuzzleTile tile)

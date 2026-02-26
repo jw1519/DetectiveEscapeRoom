@@ -16,12 +16,16 @@ public class PuzzleTile : MonoBehaviour
     void Start()
     {
         isInCorrectPosition = false;
-        //correctPosition = int.Parse(gameObject.name); // Assuming the tile's name is set to its correct position
-        CheckIfInCorrectPosition();
     }
     private void OnMouseDown()
     {
         OnAttemptTileMoved?.Invoke(this);
+        CheckIfInCorrectPosition();
+    }
+    public void SetValues()
+    {
+        currentPosition = int.Parse(name);
+        correctPosition = int.Parse(GetComponentInChildren<SpriteRenderer>().sprite.name);
         CheckIfInCorrectPosition();
     }
     public void CheckIfInCorrectPosition()
@@ -31,5 +35,11 @@ public class PuzzleTile : MonoBehaviour
         {
             InCorrectPosition?.Invoke();
         }
+    }
+    public void SetEmpty()
+    {
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponentInChildren<SpriteRenderer>().enabled = false;
+        isEmptyTile = true;
     }
 }
