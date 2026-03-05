@@ -8,10 +8,8 @@ public class ItemPoint : MonoBehaviour
     public GameObject manager;
     public bool isComplete;
     public int maxItems;
-    private void Awake()
-    {
-        maxItems = itemNeeded.Count;
-    }
+    public List<Item> items;
+
     private void OnMouseDown()
     {
         Item item = Inventory.Instance.selectedItem;
@@ -41,7 +39,7 @@ public class ItemPoint : MonoBehaviour
             {
                 item.isInCorrectPosition = true;
                 Inventory.Instance.RemoveItem(item);
-                item.PlaceItem(transform);
+                item.PlaceItem(transform, Vector3.zero);
                 HasAllNeededItems();
             }
         }
@@ -55,7 +53,8 @@ public class ItemPoint : MonoBehaviour
             }
             Debug.Log("Item used but not the correct one");
             Inventory.Instance.RemoveItem(item);
-            item.PlaceItem(transform);
+            items.Add(item);
+            item.PlaceItem(transform, Vector3.zero);
         }
         else
             Debug.Log("cant use that here");
@@ -92,11 +91,10 @@ public class ItemPoint : MonoBehaviour
             return;
         }
 
-        foreach (GameObject child in transform)
+        foreach (Item item in items)
         {
-            if (!child.GetComponent<WorldItem>()) continue;
 
-            if (!CheckItem(child.GetComponent<WorldItem>().itemSO))
+            if (!CheckItem(item))
             {
                 isComplete = false;
                 return;

@@ -25,11 +25,11 @@ public class Item : ScriptableObject
     public virtual void UseItem()
     {
     }
-    public virtual void PlaceItem(Transform parent)
+    public virtual void PlaceItem(Transform parent, Vector3 postion)
     {
         GameObject prefab = ItemPool.Instance.GetItem(itemID);
         prefab.transform.SetParent(parent);
-        prefab.transform.localPosition = Vector3.zero;
+        prefab.transform.localPosition = postion;
         prefab.transform.localRotation = Quaternion.identity;
 
         if (scale != Vector3.zero)

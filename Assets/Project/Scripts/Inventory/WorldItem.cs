@@ -27,6 +27,7 @@ public class WorldItem : MonoBehaviour
         if (transform.parent != null && transform.parent.TryGetComponent<ItemPoint>(out var itemPoint))
         {
             transform.SetParent(null);
+            itemPoint.items.Remove(itemSO);
             itemPoint.HasAllNeededItems();
         }
         transform.SetParent(null);
