@@ -203,6 +203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 33281237}
   - component: {fileID: 33281238}
+  - component: {fileID: 33281239}
   m_Layer: 0
   m_Name: picture
   m_TagString: Untagged
@@ -280,6 +281,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &33281239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33281236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d33aa5523d8b64a81a483427d7d144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &37017867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13221,6 +13234,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Alex
       objectReference: {fileID: 0}
+    - target: {fileID: 1053648842494627550, guid: 81ccddbe5f7d58540a67ca886c2db494, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 1053648842494627550, guid: 81ccddbe5f7d58540a67ca886c2db494, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 1680746066757041107, guid: 81ccddbe5f7d58540a67ca886c2db494, type: 3}
       propertyPath: m_Size.y
       value: 1.6664181
