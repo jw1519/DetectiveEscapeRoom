@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CabinetDoor : MonoBehaviour
+public class CabinetDoor : MonoBehaviour, IOpen
 {
     public DoorType doorType;
     bool isopen = false;
@@ -9,25 +9,11 @@ public class CabinetDoor : MonoBehaviour
     public List<GameObject> objectsInCabinet;
     public rotationAxis axis;
     Vector3 closedRotation;
-    private void Start()
-    {
-        ZoomManager.Instance.onZoomOut += CloseDoor;
-    }
-    void OnEnable()
-    {
-        if (ZoomManager.Instance != null)
-        ZoomManager.Instance.onZoomOut += CloseDoor;
-    }
-
-    void OnDisable()
-    {
-        ZoomManager.Instance.onZoomOut -= CloseDoor;
-    }
-    private void OnDestroy()
-    {
-        ZoomManager.Instance.onZoomOut -= CloseDoor;
-    }
     public virtual void OnMouseDown()
+    {
+        Open();
+    }
+    public void Open()
     {
         if (isopen) return;
         if (!canOpen) return;
@@ -90,7 +76,7 @@ public class CabinetDoor : MonoBehaviour
             }
         }
     }
-    public void CloseDoor()
+    public void Close()
     {
         transform.localRotation = Quaternion.Euler(closedRotation);
         isopen = false;

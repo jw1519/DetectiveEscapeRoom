@@ -51,7 +51,6 @@ public class ItemPoint : MonoBehaviour
                 Debug.Log("can't place another item");
                 return;
             }
-            Debug.Log("Item used but not the correct one");
             Inventory.Instance.RemoveItem(item);
             items.Add(item);
             item.PlaceItem(transform, Vector3.zero);

@@ -1,27 +1,10 @@
 using UnityEngine;
 
-public class Draw : MonoBehaviour
+public class Draw : MonoBehaviour, IOpen
 {
-    Collider drawCollider;
     public bool isOpen = false;
     public bool canOpen = false;
     public Vector3 move;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        drawCollider = GetComponent<Collider>();
-        ZoomManager.Instance.onZoomOut += CloseDraw;
-    }
-    void OnEnable()
-    {
-        if (ZoomManager.Instance != null)
-            ZoomManager.Instance.onZoomOut += CloseDraw;
-    }
-
-    void OnDisable()
-    {
-        ZoomManager.Instance.onZoomOut -= CloseDraw;
-    }
     public void CanOpen()
     {
         canOpen = true;
@@ -31,15 +14,15 @@ public class Draw : MonoBehaviour
         if (ManagerUI.IsTouchOverUI(Input.mousePosition)) return;
         if (!isOpen && canOpen)
         {
-            OpenDraw();
+            Open();
         }
     }
-    public void OpenDraw()
+    public void Open()
     {
         transform.Translate(move * 0.5f);
         isOpen = true;
     }
-    public void CloseDraw()
+    public void Close()
     {
         if (!isOpen) return;
         transform.Translate(-move * 0.5f);

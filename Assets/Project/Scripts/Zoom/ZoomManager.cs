@@ -88,6 +88,10 @@ public class ZoomManager : MonoBehaviour
             Zoom zoom = currentZooms[currentZooms.Count - 1];
             zoom.ZoomOut();
             currentZooms.Remove(zoom);
+            if (zoom.gameObject.GetComponent<IOpen>() != null)
+            {
+                zoom.gameObject.GetComponent<IOpen>().Close();
+            }
         }
         if (currentZooms.Count == 0)
         {

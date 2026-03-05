@@ -1137,6 +1137,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   isComplete: 0
   maxItems: 0
+  items: []
 --- !u!4 &97996914 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7173297206326680262, guid: 0bff3850fb8b0914ba97ae33a25041c1, type: 3}
@@ -11748,6 +11749,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   isComplete: 0
   maxItems: 0
+  items: []
 --- !u!1001 &1262897859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18752,8 +18754,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 666109243}
     m_Modifications:
     - target: {fileID: 458208888872881150, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
+      propertyPath: spacing
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458208888872881150, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
       propertyPath: maxItems
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 838751892664288120, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
+      propertyPath: spacing
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 838751892664288120, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
       propertyPath: maxItems
@@ -18775,6 +18785,10 @@ PrefabInstance:
       propertyPath: 'itemNeeded.Array.data[2]'
       value: 
       objectReference: {fileID: 11400000, guid: 21bdd8944970dd24d8513fdc42af6fd3, type: 2}
+    - target: {fileID: 2791924616861216892, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
+      propertyPath: spacing
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2791924616861216892, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
       propertyPath: maxItems
       value: 3
@@ -18828,6 +18842,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6106682944010097063, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
+      propertyPath: spacing
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6106682944010097063, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
       propertyPath: maxItems
       value: 3
       objectReference: {fileID: 0}
@@ -18839,6 +18857,10 @@ PrefabInstance:
       propertyPath: 'itemNeeded.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: bbfa522f22c2b8149a8b95b4ac676339, type: 2}
+    - target: {fileID: 6312885993654863682, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
+      propertyPath: spacing
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6312885993654863682, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
       propertyPath: maxItems
       value: 3
@@ -18856,6 +18878,10 @@ PrefabInstance:
       value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 7941914498034466811, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
+      propertyPath: spacing
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941914498034466811, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
       propertyPath: maxItems
       value: 3
       objectReference: {fileID: 0}
@@ -18867,6 +18893,10 @@ PrefabInstance:
       propertyPath: 'itemNeeded.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 7c8ad18598591b640a0031e50020a3c6, type: 2}
+    - target: {fileID: 7980550840478258345, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
+      propertyPath: spacing
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7980550840478258345, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
       propertyPath: maxItems
       value: 3
