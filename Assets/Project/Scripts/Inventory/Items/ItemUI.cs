@@ -6,6 +6,8 @@ public class ItemUI : MonoBehaviour
     public Item item;
     public Button inspectButton;
 
+    Button itemButton;
+
     public void SetItem(Item i)
     {
         item = i;
@@ -18,7 +20,7 @@ public class ItemUI : MonoBehaviour
         gameObject.name = item.itemID;
 
         //add button listener
-        Button itemButton = GetComponent<Button>();
+        itemButton = GetComponent<Button>();
         itemButton.onClick.AddListener(() => Inventory.Instance.SelectItem(item));
 
         inspectButton.onClick.AddListener(() => Inspect.instance.EnableInspect(item));

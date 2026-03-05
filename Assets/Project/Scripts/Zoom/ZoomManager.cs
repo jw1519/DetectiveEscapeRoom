@@ -96,7 +96,8 @@ public class ZoomManager : MonoBehaviour
             {
                 Camera.main.gameObject.transform.position = new Vector3(0, 1.2f, 0);
             }
-            zoomOutButton.gameObject.SetActive(false);
+            if (zoomOutButton != null)
+                zoomOutButton.gameObject.SetActive(false);
             onZoomOut?.Invoke();
         }
         else //zoom to the previous zoom

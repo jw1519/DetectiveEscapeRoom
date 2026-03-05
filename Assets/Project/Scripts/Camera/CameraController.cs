@@ -102,8 +102,10 @@ public class CameraController : MonoBehaviour
     public void EnableButtons()
     {
         if (GyroManager.Instance.isGyroActive) return;
-        leftButton.SetActive(true);
-        rightButton.SetActive(true);
+        if (leftButton != null)
+            leftButton.SetActive(true);
+        if (rightButton != null)
+            rightButton.SetActive(true);
     }
     public void EnableZoom()
     {
@@ -121,8 +123,10 @@ public class CameraController : MonoBehaviour
             return;
         }
         currentCamera = cameras[currentCameraIndex];
-        currentCamera.gameObject.SetActive(true);
-        ZoomCamera.gameObject.SetActive(false);
+        if (currentCamera != null)
+            currentCamera.gameObject.SetActive(true);
+        if (ZoomCamera != null)
+            ZoomCamera.gameObject.SetActive(false);
         EnableButtons();
     }
     public void DisableAllCameras()

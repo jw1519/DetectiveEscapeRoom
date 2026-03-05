@@ -23,6 +23,10 @@ public class CabinetDoor : MonoBehaviour
     {
         ZoomManager.Instance.onZoomOut -= CloseDoor;
     }
+    private void OnDestroy()
+    {
+        ZoomManager.Instance.onZoomOut -= CloseDoor;
+    }
     public virtual void OnMouseDown()
     {
         if (isopen) return;
