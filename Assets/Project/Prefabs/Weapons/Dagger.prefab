@@ -142,7 +142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5160359439585414767, guid: 7523a2d9ae9051247b68ba1d069ac5f8, type: 3}
       propertyPath: m_text
-      value: Bathroom
+      value: Return to Bathroom
       objectReference: {fileID: 0}
     - target: {fileID: 5160359439585414767, guid: 7523a2d9ae9051247b68ba1d069ac5f8, type: 3}
       propertyPath: m_fontSize
