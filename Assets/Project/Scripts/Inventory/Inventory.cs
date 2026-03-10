@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
-    InventoryUIManager uiManager;
+    InventoryPanel inventPanel;
     public List<Item> items;
     [HideInInspector] public Item selectedItem;
 
@@ -19,19 +19,19 @@ public class Inventory : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        uiManager = GetComponent<InventoryUIManager>();
+        inventPanel = GetComponent<InventoryPanel>();
     }
 
     public void AddItem(Item item)
     {
         items.Add(item);
-        uiManager.AddItem(item);
+        inventPanel.AddItem(item);
         Debug.Log("Item Added to Inventory");
     }
     public void RemoveItem(Item item)
     {
         items.Remove(item);
-        uiManager.RemoveItem(item);
+        inventPanel.RemoveItem(item);
         Debug.Log("Item Removed from Inventory");
     }
     public void SelectItem(Item item)
@@ -50,14 +50,14 @@ public class Inventory : MonoBehaviour
             DeselectItem();
         }
         //select item
-        uiManager.SelectItem(item);
+        inventPanel.SelectItem(item);
         selectedItem = item;
         item.UseItem();
         Debug.Log("Item Selected: " + item.itemName);
     }
     public void DeselectItem()
     {
-        uiManager.DeselectItem(selectedItem);
+        inventPanel.DeselectItem(selectedItem);
         selectedItem = null;
     }
 }

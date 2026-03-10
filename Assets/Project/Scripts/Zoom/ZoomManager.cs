@@ -74,7 +74,7 @@ public class ZoomManager : MonoBehaviour
 
             if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
             {
-                if (!ManagerUI.IsTouchOverUI(Input.mousePosition))
+                if (!ManagerUI.Instance.IsTouchOverUI(Input.mousePosition))
                 {
                     onZoomIn?.Invoke();
                 }

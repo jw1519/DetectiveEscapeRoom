@@ -1,18 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryUIManager : MonoBehaviour
+public class InventoryPanel : BasePanel
 {
     public GameObject itemContainer;
     public GameObject inventoryContainer;
     public Button closeButton;
     public Button openButton;
-    public void OpenInventory()
+    public override void OpenPanel()
     {
         gameObject.SetActive(true);
         openButton.gameObject.SetActive(false);
     }
-    public void CloseInventory()
+    public override void ClosePanel()
     {
         gameObject.SetActive(false);
         openButton.gameObject.SetActive(true);
