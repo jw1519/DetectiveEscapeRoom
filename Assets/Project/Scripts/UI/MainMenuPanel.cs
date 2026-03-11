@@ -14,6 +14,6 @@ public class MainMenuPanel : BasePanel
     }
     public void OpenSettings()
     {
-        // Implement settings panel opening logic here
+        ManagerUI.Instance.OpenPanel("SettingsPanel");
     }
 }
