@@ -13,10 +13,6 @@ public class PuzzleTile : MonoBehaviour
     public static event Action<PuzzleTile> OnAttemptTileMoved;
     public static event Action InCorrectPosition;
 
-    void Start()
-    {
-        isInCorrectPosition = false;
-    }
     private void OnMouseDown()
     {
         OnAttemptTileMoved?.Invoke(this);
@@ -30,7 +26,11 @@ public class PuzzleTile : MonoBehaviour
     }
     public void CheckIfInCorrectPosition()
     {
-        isInCorrectPosition = (currentPosition == correctPosition);
+        if (currentPosition == correctPosition)
+            isInCorrectPosition = true;
+        else
+            isInCorrectPosition = false;
+
         if (isInCorrectPosition)
         {
             InCorrectPosition?.Invoke();

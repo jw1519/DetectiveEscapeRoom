@@ -20,7 +20,6 @@ public class CameraController : MonoBehaviour
         if (GyroManager.Instance.isGyroActive)
         {
             DisableButtons();
-            //enabled = false;
         }
         ZoomManager.Instance.onZoomIn += EnableZoom;
         ZoomManager.Instance.onZoomOut += DisableZoom;

@@ -42,6 +42,7 @@ public class SlidingPuzzle : MonoBehaviour
                 prefabInstance.GetComponentInChildren<SpriteRenderer>().sprite = sprites[tileIndex]; // Assign the corresponding sprite to the tile
                 prefabInstance.name = tileIndex.ToString(); // Set the name to the tile index for correct position reference
                 prefabInstance.GetComponent<PuzzleTile>().SetValues();
+                prefabInstance.GetComponent<PuzzleTile>().parentPuzzle = this;
                 tiles[tileIndex] = prefabInstance;
                 tileIndex--;
             }
@@ -62,10 +63,6 @@ public class SlidingPuzzle : MonoBehaviour
                 HandleTileMoveAttempt(tile);
                 count++;
             }
-        }
-        foreach (GameObject tile in tiles)
-        {
-            tile.GetComponent<PuzzleTile>().SetValues();
         }
     }
     public void CheckSolved()
@@ -144,8 +141,8 @@ public class SlidingPuzzle : MonoBehaviour
             }
             tile.currentPosition = emptyTileIndex; // Update the current position of the tile to the index of the empty space
             emptyTile.GetComponent<PuzzleTile>().currentPosition = tileIndex; // Update the current position of the empty tile to the index of the moved tile
-
-
+            emptyTile.GetComponent<PuzzleTile>().CheckIfInCorrectPosition();
+            tile.CheckIfInCorrectPosition();
         }
     }
 }
