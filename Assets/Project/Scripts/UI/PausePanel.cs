@@ -7,6 +7,11 @@ public class PausePanel : BasePanel
         base.OpenPanel();
         Time.timeScale = 0f;
     }
+    public override void ClosePanel()
+    {
+        base.ClosePanel();
+        Time.timeScale = 1f;
+    }
     public void Settings()
     {
         ManagerUI.Instance.OpenPanel("SettingsPanel");
