@@ -44,7 +44,8 @@ public class NumberLock : MonoBehaviour
         if (IsCombinationCorrect())
         {
             ZoomManager.Instance.UnregisterZoom();
-            Destroy(gameObject);
+            Transform parent = GetComponentInParent<Transform>();
+            Destroy(parent.gameObject);
         }
     }
     public bool IsCombinationCorrect()

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class BasePanel : MonoBehaviour
 {
-    public virtual void Awake()
+    public virtual void Start()
     {
         ManagerUI.Instance.RegisterPanel(this);
     }
