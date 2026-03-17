@@ -15,6 +15,7 @@ public class GyroManager : MonoBehaviour
             Instance = this;
         }
         isGyroActive = false;
+        enableGyro = true;
         EnableGyro();
     }
     public void EnableGyro()
