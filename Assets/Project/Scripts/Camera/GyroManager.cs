@@ -6,6 +6,7 @@ public class GyroManager : MonoBehaviour
     UnityEngine.Gyroscope gyroscope;
     public Quaternion rotation;
     public bool isGyroActive;
+    public bool enableGyro;
     
     private void Awake()
     {
@@ -17,7 +18,11 @@ public class GyroManager : MonoBehaviour
         EnableGyro();
     }
     public void EnableGyro()
-    { 
+    {
+        if (!enableGyro)
+        {
+            return;
+        }
         if (SystemInfo.supportsGyroscope)
         {
             gyroscope = Input.gyro;
