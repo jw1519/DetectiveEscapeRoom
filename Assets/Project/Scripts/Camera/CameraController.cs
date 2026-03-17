@@ -23,8 +23,8 @@ public class CameraController : MonoBehaviour
         }
         ZoomManager.Instance.onZoomIn += EnableZoom;
         ZoomManager.Instance.onZoomOut += DisableZoom;
-        GyroManager.Instance.onGyroEnable += EnableButtons;
-        GyroManager.Instance.onGyroDisable += DisableButtons;
+        GyroManager.Instance.onGyroEnable += DisableButtons;
+        GyroManager.Instance.onGyroDisable += EnableButtons;
 
         currentCamera = cameras.Find(camera => camera.gameObject.activeSelf);
         currentCameraIndex = cameras.IndexOf(currentCamera);
@@ -35,15 +35,15 @@ public class CameraController : MonoBehaviour
         if (ZoomManager.Instance == null) return;
         ZoomManager.Instance.onZoomIn += EnableZoom;
         ZoomManager.Instance.onZoomOut += DisableZoom;
-        GyroManager.Instance.onGyroEnable += EnableButtons;
-        GyroManager.Instance.onGyroDisable += DisableButtons;
+        GyroManager.Instance.onGyroEnable += DisableButtons;
+        GyroManager.Instance.onGyroDisable += EnableButtons;
     }
     private void OnDisable()
     {
         ZoomManager.Instance.onZoomIn -= DisableButtons;
         ZoomManager.Instance.onZoomOut -= EnableButtons;
-        GyroManager.Instance.onGyroEnable -= EnableButtons;
-        GyroManager.Instance.onGyroDisable -= DisableButtons;
+        GyroManager.Instance.onGyroEnable -= DisableButtons;
+        GyroManager.Instance.onGyroDisable -= EnableButtons;
     }
     public void TurnLeft()
     {
