@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-public class KeyPadDisplay : MonoBehaviour
+public class KeyPadDisplay : MonoBehaviour, ILock
 {
     public TextMeshPro text;
     private void OnEnable()
@@ -14,5 +14,15 @@ public class KeyPadDisplay : MonoBehaviour
     public void UpdateDisplay(string playerInput)
     {
         text.text = playerInput;
+        if (playerInput == "Correct")
+        {
+            text.text = "Unlocked";
+            unlock();
+        }
+    }
+
+    public void unlock()
+    {
+        ManagerUI.Instance.OpenPanel("WinningPanel");
     }
 }
