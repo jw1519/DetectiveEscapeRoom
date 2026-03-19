@@ -40,7 +40,7 @@ public class GyroManager : MonoBehaviour
         else
         {
             isGyroActive = false;
-            Debug.Log("Gyroscope not supported on this device");
+            //Debug.Log("Gyroscope not supported on this device");
         }
     }
     public void DisableGyro()

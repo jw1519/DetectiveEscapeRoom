@@ -8,6 +8,8 @@ public class ManagerUI : MonoBehaviour
 
     public List<BasePanel> panels;
 
+    public GameObject onScreenCameraControls;
+
     private void Awake()
     {
         if (Instance == null)
@@ -17,6 +19,45 @@ public class ManagerUI : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+    private void Start()
+    {
+        if (GyroManager.Instance != null)
+        {
+            GyroManager.Instance.onGyroDisable += EnableOnScreenCameraControls;
+            GyroManager.Instance.onGyroEnable += DisableOnScreenCameraControls;
+        }
+        if (ZoomManager.Instance != null)
+        {
+            ZoomManager.Instance.onZoomIn += DisableOnScreenCameraControls;
+            ZoomManager.Instance.onZoomOut += EnableOnScreenCameraControls;
+        }
+    }
+    private void OnEnable()
+    {
+        if (GyroManager.Instance != null)
+        {
+            GyroManager.Instance.onGyroDisable += EnableOnScreenCameraControls;
+            GyroManager.Instance.onGyroEnable += DisableOnScreenCameraControls;
+        }
+        if (ZoomManager.Instance != null)
+        {
+            ZoomManager.Instance.onZoomIn += DisableOnScreenCameraControls;
+            ZoomManager.Instance.onZoomOut += EnableOnScreenCameraControls;
+        }
+    }
+    private void OnDisable()
+    {
+        if (GyroManager.Instance != null)
+        {
+            GyroManager.Instance.onGyroDisable -= EnableOnScreenCameraControls;
+            GyroManager.Instance.onGyroEnable -= DisableOnScreenCameraControls;
+        }
+        if (ZoomManager.Instance != null)
+        {
+            ZoomManager.Instance.onZoomIn -= DisableOnScreenCameraControls;
+            ZoomManager.Instance.onZoomOut -= EnableOnScreenCameraControls;
         }
     }
     public void RegisterPanel(BasePanel panel)
@@ -53,5 +94,15 @@ public class ManagerUI : MonoBehaviour
                 break;
             }
         }
+    }
+    public void DisableOnScreenCameraControls()
+    {
+        if (onScreenCameraControls!= null)
+            onScreenCameraControls.SetActive(false);
+    }
+    public void EnableOnScreenCameraControls()
+    {
+        if (onScreenCameraControls != null)
+            onScreenCameraControls.SetActive(true);
     }
 }
