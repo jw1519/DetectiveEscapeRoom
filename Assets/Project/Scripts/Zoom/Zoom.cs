@@ -11,7 +11,7 @@ public class Zoom : MonoBehaviour
     private void Awake()
     {
         zoomCollider = GetComponent<Collider>();
-        cinemachineCamera = Camera.main.gameObject.GetComponent<CameraController>().ZoomCamera;
+        cinemachineCamera = Camera.main.gameObject.GetComponentInParent<CameraController>().ZoomCamera;
     }
 
     public void ZoomIn()

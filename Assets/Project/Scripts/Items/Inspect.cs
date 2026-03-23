@@ -20,7 +20,7 @@ public class Inspect : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        cam = Camera.main.gameObject.GetComponent<CameraController>();
+        cam = Camera.main.gameObject.GetComponentInParent<CameraController>();
         GetComponentInParent<Transform>().gameObject.SetActive(false);
     }
     bool wasActive = false;

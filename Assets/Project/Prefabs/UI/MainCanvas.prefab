@@ -3260,7 +3260,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87f9c22b8b1e7141adc3ec07c7d5c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panels: []
+  panels:
+  - {fileID: 8976229460373463263}
+  - {fileID: 7834882074786688723}
+  - {fileID: 472520007255411282}
+  - {fileID: 2231208851005271689}
+  - {fileID: 7800131842845387070}
+  onScreenCameraControls: {fileID: 2670573835344293832}
 --- !u!1 &5300553050423437535
 GameObject:
   m_ObjectHideFlags: 0

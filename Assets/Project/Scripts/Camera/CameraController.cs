@@ -25,23 +25,6 @@ public class CameraController : MonoBehaviour
         ZoomManager.Instance.onZoomOut += DisableZoom;
         GyroManager.Instance.onGyroEnable += DisableAllCameras;
 
-        //GameObject Cameras = GameManager.Instance.Objects.Find(c => c.name == "MainCameras");
-        //for (int i = 0; i < Cameras.transform.childCount; i++ )
-        //{
-        //    if (Cameras.transform.GetChild(i).name == "InspectCamera")
-        //    {
-        //        inspectCamera = Cameras.transform.GetChild(i).GetComponent<CinemachineCamera>();
-        //    }
-        //    else if (Cameras.transform.GetChild(i).name == "ZoomInCamera")
-        //    {
-        //        ZoomCamera = Cameras.transform.GetChild(i).GetComponent<CinemachineCamera>();
-        //    }
-        //    else
-        //    {
-        //        cameras.Add(Cameras.transform.GetChild(i).GetComponent<CinemachineCamera>());
-        //    }
-        //}
-
         currentCamera = cameras.Find(camera => camera.gameObject.activeSelf);
         currentCameraIndex = cameras.IndexOf(currentCamera);
         inspectCamera.gameObject.SetActive(false);
