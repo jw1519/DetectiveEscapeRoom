@@ -10,7 +10,7 @@ public class ItemPoint : MonoBehaviour
     public int maxItems;
     public List<Item> items;
 
-    private void OnMouseDown()
+    public virtual void OnMouseDown()
     {
         Item item = Inventory.Instance.selectedItem;
         if (item != null)
@@ -32,7 +32,7 @@ public class ItemPoint : MonoBehaviour
             }
             if (maxItems == 1 && transform.childCount == 1)
             {
-                Debug.Log("can't place another item");
+                ManagerUI.Instance.SetHintText("Can't place another item here");
                 return;
             }
             else
@@ -48,7 +48,7 @@ public class ItemPoint : MonoBehaviour
         {
             if (itemNeeded.Count == 1 && transform.childCount == 1)
             {
-                Debug.Log("can't place another item");
+                ManagerUI.Instance.SetHintText("Can't place another item here");
                 return;
             }
             Inventory.Instance.RemoveItem(item);
@@ -56,7 +56,7 @@ public class ItemPoint : MonoBehaviour
             item.PlaceItem(transform, Vector3.zero);
         }
         else
-            Debug.Log("cant use that here");
+            ManagerUI.Instance.SetHintText("Can't use that here");
     }
     // check if item is usable on this point
     public bool CheckItem(Item checkItem)

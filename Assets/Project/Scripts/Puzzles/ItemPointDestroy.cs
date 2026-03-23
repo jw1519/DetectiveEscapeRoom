@@ -2,6 +2,18 @@ using UnityEngine;
 
 public class ItemPointDestroy : ItemPoint
 {
+    public override void OnMouseDown()
+    {
+        Item item = Inventory.Instance.selectedItem;
+        if (item != null)
+        {
+            UseItemOnPoint(item);
+        }
+        else
+        {
+            ManagerUI.Instance.SetHintText("The Object looks flimsy prehaps a tool could help");
+        }
+    }
     public override void UseItemOnPoint(Item item)
     {
         if (itemNeeded != null && CheckItemNeeded(item))
@@ -10,7 +22,7 @@ public class ItemPointDestroy : ItemPoint
             Destroy(gameObject);
         }
         else
-            Debug.Log("cant use that here");
+            ManagerUI.Instance.SetHintText("This item doesnt help. Maybe something sharp could do the trick");
     }
     public void RemoveItems()
     {

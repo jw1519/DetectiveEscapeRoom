@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,6 +10,9 @@ public class ManagerUI : MonoBehaviour
     public List<BasePanel> panels;
 
     public GameObject onScreenCameraControls;
+    public TextMeshProUGUI hintText;
+    public int hintDisplayDuration = 3;
+    float hintTimer;
 
     private void Awake()
     {
@@ -60,6 +64,14 @@ public class ManagerUI : MonoBehaviour
             ZoomManager.Instance.onZoomOut -= EnableOnScreenCameraControls;
         }
     }
+    private void Update()
+    {
+        if (hintText.enabled)
+        {
+            if (Time.time >= hintTimer)
+                hintText.enabled = false;
+        }
+    }
     public void RegisterPanel(BasePanel panel)
     {
         if (!panels.Contains(panel))
@@ -97,12 +109,21 @@ public class ManagerUI : MonoBehaviour
     }
     public void DisableOnScreenCameraControls()
     {
-        if (onScreenCameraControls!= null)
+        if (onScreenCameraControls != null)
             onScreenCameraControls.SetActive(false);
     }
     public void EnableOnScreenCameraControls()
     {
         if (onScreenCameraControls != null)
             onScreenCameraControls.SetActive(true);
+    }
+    public void SetHintText(string text)
+    {
+        hintTimer = Time.time + hintDisplayDuration;
+        hintText.enabled = true;
+        if (hintText != null)
+        {
+            hintText.text = text;
+        }
     }
 }
