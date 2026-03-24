@@ -21,8 +21,19 @@ public class ItemUI : MonoBehaviour
 
         //add button listener
         itemButton = GetComponent<Button>();
-        itemButton.onClick.AddListener(() => Inventory.Instance.SelectItem(item));
+        //itemButton.onClick.AddListener(() => Inventory.Instance.SelectItem(item));
+        itemButton.onClick.AddListener(() => ManagerUI.Instance.panels.Find(panel => panel.name == "InventoryPanel").gameObject.GetComponent<InventoryPanel>().SelectItem(item));
 
         inspectButton.onClick.AddListener(() => Inspect.instance.EnableInspect(item));
+    }
+    public void Select()
+    {
+        //highlight item in inventory
+        GetComponent<Image>().color = Color.yellow;
+    }
+    public void Deselect()
+    {
+        //remove highlight from item in inventory
+        GetComponent<Image>().color = Color.white;
     }
 }

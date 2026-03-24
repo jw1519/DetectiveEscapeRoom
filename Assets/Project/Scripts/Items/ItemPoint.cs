@@ -12,7 +12,8 @@ public class ItemPoint : MonoBehaviour
 
     public virtual void OnMouseDown()
     {
-        Item item = Inventory.Instance.selectedItem;
+        //Item item = Inventory.Instance.selectedItem;
+        Item item = ManagerUI.Instance.panels.Find(panel => panel.name == "InventoryPanel").gameObject.GetComponent<InventoryPanel>().selectedItem;
         if (item != null)
         {
             UseItemOnPoint(item);
@@ -26,7 +27,8 @@ public class ItemPoint : MonoBehaviour
             if (item.canBePlaced == false)
             {
                 GetComponentInParent<ILock>()?.unlock();
-                Inventory.Instance.RemoveItem(item);
+                //Inventory.Instance.RemoveItem(item);
+                ManagerUI.Instance.panels.Find(panel => panel.name == "InventoryPanel").gameObject.GetComponent<InventoryPanel>().RemoveItem(item);
                 Destroy(gameObject);
                 return;
             }
@@ -38,7 +40,8 @@ public class ItemPoint : MonoBehaviour
             else
             {
                 item.isInCorrectPosition = true;
-                Inventory.Instance.RemoveItem(item);
+                //Inventory.Instance.RemoveItem(item);
+                ManagerUI.Instance.panels.Find(panel => panel.name == "InventoryPanel").gameObject.GetComponent<InventoryPanel>().RemoveItem(item);
                 item.PlaceItem(transform, Vector3.zero);
                 HasAllNeededItems();
             }
@@ -51,7 +54,8 @@ public class ItemPoint : MonoBehaviour
                 ManagerUI.Instance.SetHintText("Can't place another item here");
                 return;
             }
-            Inventory.Instance.RemoveItem(item);
+            //Inventory.Instance.RemoveItem(item);
+            ManagerUI.Instance.panels.Find(panel => panel.name == "InventoryPanel").gameObject.GetComponent<InventoryPanel>().RemoveItem(item);
             items.Add(item);
             item.PlaceItem(transform, Vector3.zero);
         }
@@ -92,13 +96,11 @@ public class ItemPoint : MonoBehaviour
 
         foreach (Item item in items)
         {
-
             if (!CheckItem(item))
             {
                 isComplete = false;
                 return;
             }
-            
         }
         isComplete = true;
     }

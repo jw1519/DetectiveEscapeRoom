@@ -4,7 +4,7 @@ public class ItemPointDestroy : ItemPoint
 {
     public override void OnMouseDown()
     {
-        Item item = Inventory.Instance.selectedItem;
+        Item item = ManagerUI.Instance.panels.Find(panel => panel.name == "InventoryPanel").gameObject.GetComponent<InventoryPanel>().selectedItem;
         if (item != null)
         {
             UseItemOnPoint(item);

@@ -19,7 +19,7 @@ public class WorldItem : MonoBehaviour
             return;
 
         //pick up item
-        Inventory.Instance.AddItem(itemSO);
+        ManagerUI.Instance.panels.Find(panel => panel.name == "InventoryPanel").gameObject.GetComponent<InventoryPanel>().AddItem(itemSO);
         itemSO.isInCorrectPosition = false;
         ItemPool.Instance.AddItem(gameObject);
 

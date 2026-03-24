@@ -20,7 +20,7 @@ public class Item : ScriptableObject
     }
     public virtual void SelectItem()
     {
-        Inventory.Instance.SelectItem(this);
+        ManagerUI.Instance.panels.Find(panel => panel.name == "InventoryPanel").gameObject.GetComponent<InventoryPanel>().SelectItem(this);
     }
     public virtual void UseItem()
     {
@@ -35,7 +35,7 @@ public class Item : ScriptableObject
         if (scale != Vector3.zero)
             prefab.transform.localScale = scale;
 
-        Inventory.Instance.RemoveItem(this);
-        Inventory.Instance.DeselectItem();
+        ManagerUI.Instance.panels.Find(panel => panel.name == "InventoryPanel").gameObject.GetComponent<InventoryPanel>().RemoveItem(this);
+        ManagerUI.Instance.panels.Find(panel => panel.name == "InventoryPanel").gameObject.GetComponent<InventoryPanel>().DeselectItem();
     }
 }

@@ -16,7 +16,7 @@ public class Room : ItemPoint
                 Debug.Log("can't place another item");
                 return;
             }
-            Inventory.Instance.RemoveItem(item);
+            ManagerUI.Instance.panels.Find(panel => panel.name == "InventoryPanel").gameObject.GetComponent<InventoryPanel>().RemoveItem(item);
             int amount = items.Count;
             item.PlaceItem(transform, new Vector3(spacing * amount, 0, 0));
             items.Add(item);

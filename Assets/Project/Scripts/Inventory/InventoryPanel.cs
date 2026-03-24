@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +9,9 @@ public class InventoryPanel : BasePanel
     public GameObject inventoryContainer;
     public Button closeButton;
     public Button openButton;
+
+    public List<ItemUI> itemUis;
+      public Item selectedItem;
     public override void OpenPanel()
     {
         gameObject.SetActive(true);
@@ -22,7 +27,8 @@ public class InventoryPanel : BasePanel
         if (item == null)
             return;
         itemContainer.GetComponent<ItemUI>().SetItem(item);
-        Instantiate(this.itemContainer, inventoryContainer.transform);
+        ItemUI itemUI = Instantiate(itemContainer, inventoryContainer.transform).GetComponent<ItemUI>();
+        itemUis.Add(itemUI);
     }
     public void RemoveItem(Item item)
     {
@@ -31,6 +37,7 @@ public class InventoryPanel : BasePanel
             Debug.Log(item.itemName);
             if (child.name == item.itemID)
             {
+                itemUis.Remove(child.GetComponent<ItemUI>());
                 Destroy(child.gameObject);
                 break;
             }
@@ -38,11 +45,20 @@ public class InventoryPanel : BasePanel
     }
     public void SelectItem(Item item)
     {
-        Debug.Log("Item Selected in UI: " + item.itemName);
-        //change background color of selected item
+        if (item.itemName == "FlashLight")
+        {
+            item.UseItem();
+        }
+        // mae sure item isnt already selected
+        if (selectedItem == item)
+            return;
+
+        //select item
+        selectedItem = item;
+        item.UseItem();
     }
-    public void DeselectItem(Item item)
+    public void DeselectItem()
     {
-        Debug.Log("Item Deselected in UI: " + item.itemName);
+        selectedItem = null;
     }
 }
