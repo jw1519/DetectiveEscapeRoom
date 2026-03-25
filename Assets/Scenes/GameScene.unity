@@ -869,6 +869,7 @@ MonoBehaviour:
   isComplete: 0
   maxItems: 0
   items: []
+  hintText: Seems I need a key
 --- !u!4 &97996914 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7173297206326680262, guid: 0bff3850fb8b0914ba97ae33a25041c1, type: 3}
@@ -1215,6 +1216,10 @@ PrefabInstance:
     - target: {fileID: 4542809568028096017, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
       propertyPath: targetPosition.z
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8050933017216760735, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
+      propertyPath: hintText
+      value: Seems like something should fit here
       objectReference: {fileID: 0}
     - target: {fileID: 8050933017216760735, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
       propertyPath: itemNeeded.Array.size
@@ -1584,6 +1589,10 @@ PrefabInstance:
     - target: {fileID: 4542809568028096017, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
       propertyPath: targetPosition.z
       value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8050933017216760735, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
+      propertyPath: hintText
+      value: Seems like something should fit here
       objectReference: {fileID: 0}
     - target: {fileID: 8050933017216760735, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
       propertyPath: itemNeeded.Array.size
@@ -2740,6 +2749,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8050933017216760735, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
+      propertyPath: hintText
+      value: Seems like something should fit here
+      objectReference: {fileID: 0}
+    - target: {fileID: 8050933017216760735, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
       propertyPath: itemNeeded
       value: 
       objectReference: {fileID: 11400000, guid: faf07eebb1e7b2840a3c3a2db877520e, type: 2}
@@ -3609,6 +3622,10 @@ PrefabInstance:
     - target: {fileID: 4542809568028096017, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
       propertyPath: targetPosition.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8050933017216760735, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
+      propertyPath: hintText
+      value: Seems like something should fit here
       objectReference: {fileID: 0}
     - target: {fileID: 8050933017216760735, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
       propertyPath: itemNeeded
@@ -5342,6 +5359,10 @@ PrefabInstance:
       value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8050933017216760735, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
+      propertyPath: hintText
+      value: Seems like something should fit here
+      objectReference: {fileID: 0}
+    - target: {fileID: 8050933017216760735, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
       propertyPath: itemNeeded
       value: 
       objectReference: {fileID: 11400000, guid: 078b1d0f78bc8264e9a01af4fd0ad7af, type: 2}
@@ -6950,6 +6971,10 @@ PrefabInstance:
     - target: {fileID: 4542809568028096017, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
       propertyPath: targetPosition.z
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8050933017216760735, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
+      propertyPath: hintText
+      value: Seems like something should fit here
       objectReference: {fileID: 0}
     - target: {fileID: 8050933017216760735, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
       propertyPath: itemNeeded
@@ -9603,8 +9628,7 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 64969138912156256, guid: bebc556220f8f12419248357a74e709f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4300319930065006, guid: bebc556220f8f12419248357a74e709f, type: 3}
@@ -9658,30 +9682,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4173861683334556, guid: 8cc80c08eb78dc54d84131e5dd07d90c, type: 3}
   m_PrefabInstance: {fileID: 1986634118}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1260812617 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1926323424167968166, guid: 81ccddbe5f7d58540a67ca886c2db494, type: 3}
-  m_PrefabInstance: {fileID: 1383369505}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1260812623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260812617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a930f0f950e5066478a3a618932c6f01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemNeeded:
-  - {fileID: 11400000, guid: e21a11455a7bc024196d0eb32424a304, type: 2}
-  useableItems: []
-  manager: {fileID: 0}
-  isComplete: 0
-  maxItems: 0
-  items: []
 --- !u!1001 &1262897859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10872,6 +10872,7 @@ MonoBehaviour:
   maxItems: 0
   items:
   - {fileID: 11400000, guid: 22588d0512096e74facb5034c4e4aa02, type: 2}
+  hintText: this seems flimsy
 --- !u!1001 &1338892751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11128,6 +11129,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1870134887}
     m_Modifications:
+    - target: {fileID: 880800640597806753, guid: 81ccddbe5f7d58540a67ca886c2db494, type: 3}
+      propertyPath: hintText
+      value: I need a key for this
+      objectReference: {fileID: 0}
     - target: {fileID: 1053648842494627550, guid: 81ccddbe5f7d58540a67ca886c2db494, type: 3}
       propertyPath: m_text
       value: Alex
@@ -11247,9 +11252,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3758921458764009210, guid: 81ccddbe5f7d58540a67ca886c2db494, type: 3}
       insertIndex: -1
       addedObject: {fileID: 100188140}
-    - targetCorrespondingSourceObject: {fileID: 1926323424167968166, guid: 81ccddbe5f7d58540a67ca886c2db494, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1260812623}
     - targetCorrespondingSourceObject: {fileID: 8779878021635578868, guid: 81ccddbe5f7d58540a67ca886c2db494, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -13662,6 +13664,10 @@ PrefabInstance:
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8050933017216760735, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
+      propertyPath: hintText
+      value: Seems like something should fit here
+      objectReference: {fileID: 0}
+    - target: {fileID: 8050933017216760735, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
       propertyPath: itemNeeded.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -14857,6 +14863,10 @@ PrefabInstance:
     - target: {fileID: 4542809568028096017, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
       propertyPath: targetPosition.z
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8050933017216760735, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
+      propertyPath: hintText
+      value: Seems like something should fit here
       objectReference: {fileID: 0}
     - target: {fileID: 8050933017216760735, guid: 4ccc28f79be657746923597f3593ae16, type: 3}
       propertyPath: itemNeeded.Array.size
@@ -16495,53 +16505,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 666109243}
     m_Modifications:
     - target: {fileID: 458208888872881150, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: spacing
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 458208888872881150, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: maxItems
-      value: 3
+      propertyPath: hintText
+      value: Tokens should be placed here, but which ones?
       objectReference: {fileID: 0}
     - target: {fileID: 838751892664288120, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: spacing
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 838751892664288120, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: maxItems
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 838751892664288120, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: itemNeeded.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 838751892664288120, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: 'itemNeeded.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 4d80ed4fb37f3bb4d81708a70a1726d0, type: 2}
-    - target: {fileID: 838751892664288120, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: 'itemNeeded.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 5351b0e58e19f2f459a50dff9d5e1b12, type: 2}
-    - target: {fileID: 838751892664288120, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: 'itemNeeded.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 21bdd8944970dd24d8513fdc42af6fd3, type: 2}
-    - target: {fileID: 2791924616861216892, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: spacing
-      value: 0.1
+      propertyPath: hintText
+      value: Tokens should be placed here, but which ones?
       objectReference: {fileID: 0}
     - target: {fileID: 2791924616861216892, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: maxItems
-      value: 3
+      propertyPath: hintText
+      value: Tokens should be placed here, but which ones?
       objectReference: {fileID: 0}
-    - target: {fileID: 2791924616861216892, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: itemNeeded.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2791924616861216892, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: 'itemNeeded.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: f90ce0e6bffe7604bafb8667d47a0fa8, type: 2}
     - target: {fileID: 5499287608162469441, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.4508753
@@ -16583,89 +16557,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6106682944010097063, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: spacing
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6106682944010097063, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: maxItems
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6106682944010097063, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: itemNeeded.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6106682944010097063, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: 'itemNeeded.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: bbfa522f22c2b8149a8b95b4ac676339, type: 2}
-    - target: {fileID: 6312885993654863682, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: spacing
-      value: 0.1
+      propertyPath: hintText
+      value: Tokens should be placed here, but which ones?
       objectReference: {fileID: 0}
     - target: {fileID: 6312885993654863682, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: maxItems
-      value: 3
+      propertyPath: hintText
+      value: Tokens should be placed here, but which ones?
       objectReference: {fileID: 0}
-    - target: {fileID: 6312885993654863682, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: itemNeeded.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6312885993654863682, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: 'itemNeeded.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 28ac625ec7058e84298342bbda551e56, type: 2}
-    - target: {fileID: 6312885993654863682, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: 'itemNeeded.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: a7c9318cbccd7214887dd24f569d33c7, type: 2}
     - target: {fileID: 6414748602770698634, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
       propertyPath: m_Name
       value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 7941914498034466811, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: spacing
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7941914498034466811, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: maxItems
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7941914498034466811, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: itemNeeded.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7941914498034466811, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: 'itemNeeded.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 7c8ad18598591b640a0031e50020a3c6, type: 2}
-    - target: {fileID: 7941914498034466811, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: 'itemNeeded.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 94a473bb18dbbb24a9e22f6fd50daa63, type: 2}
-    - target: {fileID: 7980550840478258345, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: spacing
-      value: 0.1
+      propertyPath: hintText
+      value: Tokens should be placed here, but which ones?
       objectReference: {fileID: 0}
     - target: {fileID: 7980550840478258345, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: maxItems
-      value: 3
+      propertyPath: hintText
+      value: Tokens should be placed here, but which ones?
       objectReference: {fileID: 0}
-    - target: {fileID: 7980550840478258345, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: itemNeeded.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980550840478258345, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: 'itemNeeded.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 944b8dcd56e2665489cbff205862c393, type: 2}
-    - target: {fileID: 7980550840478258345, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: 'itemNeeded.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: dfd2b5b8dabd4a1469f1bf28e0507151, type: 2}
-    - target: {fileID: 7980550840478258345, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
-      propertyPath: 'itemNeeded.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 652bb13e29fd91842bdf3556477c1563, type: 2}
     - target: {fileID: 7980550840478258345, guid: b0bcf3b19b5e42b43a69be853eb4f58a, type: 3}
       propertyPath: 'itemNeeded.Array.data[3]'
       value: 

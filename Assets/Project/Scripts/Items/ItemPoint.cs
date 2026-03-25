@@ -9,6 +9,7 @@ public class ItemPoint : MonoBehaviour
     public bool isComplete;
     public int maxItems;
     public List<Item> items;
+    public string hintText = "Can't use that here";
 
     public virtual void OnMouseDown()
     {
@@ -18,6 +19,8 @@ public class ItemPoint : MonoBehaviour
         {
             UseItemOnPoint(item);
         }
+        else
+            ManagerUI.Instance.SetHintText(hintText);
     }
     public virtual void UseItemOnPoint(Item item)
     {
@@ -60,7 +63,7 @@ public class ItemPoint : MonoBehaviour
             item.PlaceItem(transform, Vector3.zero);
         }
         else
-            ManagerUI.Instance.SetHintText("Can't use that here");
+            ManagerUI.Instance.SetHintText(hintText);
     }
     // check if item is usable on this point
     public bool CheckItem(Item checkItem)

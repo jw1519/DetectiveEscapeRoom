@@ -379,6 +379,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3d6fec959292c444f9516f0d9eccc8a5, type: 2}
   manager: {fileID: 0}
   isComplete: 0
+  maxItems: 0
+  items: []
+  hintText: Can't place another item here
 --- !u!1 &8216803517951474415
 GameObject:
   m_ObjectHideFlags: 0
