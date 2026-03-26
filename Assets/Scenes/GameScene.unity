@@ -2058,6 +2058,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NamePlateQuinn
       objectReference: {fileID: 0}
+    - target: {fileID: 1807570483285088103, guid: bf564ab441f1ea94e9d28c54e6471d1c, type: 3}
+      propertyPath: itemSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 493cfb1bb14c82a4c8b3f0cf00132aec, type: 2}
     - target: {fileID: 2676240836134480384, guid: bf564ab441f1ea94e9d28c54e6471d1c, type: 3}
       propertyPath: m_text
       value: Quinn
@@ -17181,7 +17185,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8767267708607917850}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4248234691733943385, guid: 898b5ca009ddaed4989f690d6592cce3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
