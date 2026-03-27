@@ -33,7 +33,6 @@ public class InventoryPanel : BasePanel
     {
         foreach (RectTransform child in inventoryContainer.transform)
         {
-            Debug.Log(item.itemName);
             if (child.name == item.itemID)
             {
                 itemUis.Remove(child.GetComponent<ItemUI>());
