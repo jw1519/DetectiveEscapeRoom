@@ -13,13 +13,12 @@ public class CameraController : MonoBehaviour
     public CinemachineCamera inspectCamera;
     public CinemachineCamera ZoomCamera;
 
-    public GameObject leftButton;
-    public GameObject rightButton;
+    public BasePanel onScreenCameraControls;
     private void Start()
     {
         if (GyroManager.Instance.isGyroActive)
         {
-            ManagerUI.Instance.DisableOnScreenCameraControls();
+            onScreenCameraControls.ClosePanel();
         }
         ZoomManager.Instance.onZoomIn += EnableZoom;
         ZoomManager.Instance.onZoomOut += DisableZoom;
@@ -27,7 +26,9 @@ public class CameraController : MonoBehaviour
 
         currentCamera = cameras.Find(camera => camera.gameObject.activeSelf);
         currentCameraIndex = cameras.IndexOf(currentCamera);
-        inspectCamera.gameObject.SetActive(false);
+
+        onScreenCameraControls = ManagerUI.Instance.panels.Find(p => p.name == "OnScreenCameraControls");
+        onScreenCameraControls.GetComponent<OnScreenCameraControls>().SetControls(this);
     }
     private void OnEnable()
     {
@@ -79,7 +80,7 @@ public class CameraController : MonoBehaviour
         currentCamera.gameObject.SetActive(false);
         currentCamera = inspectCamera;
         inspectCamera.gameObject.SetActive(true);
-        ManagerUI.Instance.DisableOnScreenCameraControls();
+        onScreenCameraControls.ClosePanel();
     }
     public void DisableInspect()
     {
@@ -93,7 +94,7 @@ public class CameraController : MonoBehaviour
         inspectCamera.gameObject.SetActive(false);
         if (previousCamera == cameras[currentCameraIndex])
         {
-            ManagerUI.Instance.EnableOnScreenCameraControls();
+            onScreenCameraControls.OpenPanel();
         }
     }
     public void EnableZoom()
@@ -102,6 +103,8 @@ public class CameraController : MonoBehaviour
         currentCamera.gameObject.SetActive(false);
         currentCamera = ZoomCamera;
         ZoomCamera.gameObject.SetActive(true);
+
+        onScreenCameraControls.ClosePanel();
     }
     public void DisableZoom()
     {
@@ -115,6 +118,8 @@ public class CameraController : MonoBehaviour
             currentCamera.gameObject.SetActive(true);
         if (ZoomCamera != null)
             ZoomCamera.gameObject.SetActive(false);
+
+        onScreenCameraControls.OpenPanel();
     }
     public void DisableAllCameras()
     {
@@ -124,5 +129,7 @@ public class CameraController : MonoBehaviour
         }
         inspectCamera.gameObject.SetActive(false);
         ZoomCamera.gameObject.SetActive(false);
+
+        onScreenCameraControls.OpenPanel();
     }
 }

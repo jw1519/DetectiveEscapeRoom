@@ -2284,7 +2284,6 @@ GameObject:
   - component: {fileID: 4979220592611657436}
   - component: {fileID: 2132764459865493112}
   - component: {fileID: 8915151415898753079}
-  - component: {fileID: 4248234691733943385}
   m_Layer: 5
   m_Name: InventoryPanel
   m_TagString: Untagged
@@ -2398,19 +2397,7 @@ MonoBehaviour:
   inventoryContainer: {fileID: 8495586792462475078}
   closeButton: {fileID: 1676700042010083579}
   openButton: {fileID: 41239125755370374}
---- !u!114 &4248234691733943385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3558222831258610397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e22aa6acccf843b4fb2b05cb56780a4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  items: []
+  itemUis: []
   selectedItem: {fileID: 0}
 --- !u!1 &3788514740626843362
 GameObject:
@@ -2539,9 +2526,17 @@ MonoBehaviour:
   - {fileID: 4564396641109044647}
   - {fileID: 8335111335759167959}
   - {fileID: 7340811276844101129}
+  - {fileID: 1266800239420782342}
   onScreenCameraControls: {fileID: 4448267779986522917}
   hintText: {fileID: 5012761411113886929}
   hintDisplayDuration: 3
+  buttons:
+  - {fileID: 8556803081391678846}
+  - {fileID: 7059807481672986170}
+  - {fileID: 6959154310441869446}
+  - {fileID: 5275985376965266060}
+  - {fileID: 41239125755370374}
+  - {fileID: 4364358319250222046}
 --- !u!1 &3823463758769201776
 GameObject:
   m_ObjectHideFlags: 0
@@ -3091,6 +3086,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4482945115027721755}
+  - component: {fileID: 1266800239420782342}
   m_Layer: 5
   m_Name: OnScreenCameraControls
   m_TagString: Untagged
@@ -3119,6 +3115,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1266800239420782342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4448267779986522917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c4b949ee6737b4b9d6f4b8cc5db278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  left: {fileID: 8556803081391678846}
+  right: {fileID: 7059807481672986170}
 --- !u!1 &4639674564165776023
 GameObject:
   m_ObjectHideFlags: 0
@@ -3132,7 +3142,7 @@ GameObject:
   - component: {fileID: 2576088794479180018}
   - component: {fileID: 6959154310441869446}
   m_Layer: 5
-  m_Name: BackButton
+  m_Name: ZoomOutButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5306,8 +5316,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00017641603, y: 0}
-  m_SizeDelta: {x: -18.3885, y: 300}
+  m_AnchoredPosition: {x: 0.00004859685, y: 0}
+  m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &3629734995964809821
 MonoBehaviour:

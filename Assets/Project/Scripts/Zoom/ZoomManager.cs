@@ -13,7 +13,6 @@ public class ZoomManager : MonoBehaviour
     public event Action onZoomIn;
     public event Action onZoomOut;
 
-    public CameraController cameraController;
     Camera cam => Camera.main;
     private void Awake()
     {
@@ -25,6 +24,11 @@ public class ZoomManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+    private void Start()
+    {
+        zoomOutButton = ManagerUI.Instance.buttons.Find(b => b.name == "ZoomOutButton");
+        zoomOutButton.onClick.AddListener(() => UnregisterZoom());
     }
     private void Update()
     {
