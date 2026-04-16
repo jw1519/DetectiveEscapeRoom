@@ -76,13 +76,24 @@ public class ZoomManager : MonoBehaviour
             GyroManager.Instance.DisableGyro();
             zoomOutButton.gameObject.SetActive(true);
 
-            if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+            if (Application.isMobilePlatform)
+            {
+                if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+                {
+                    if (!ManagerUI.Instance.IsTouchOverUI(Input.mousePosition))
+                    {
+                        onZoomIn?.Invoke();
+                    }
+                }
+            }
+            else
             {
                 if (!ManagerUI.Instance.IsTouchOverUI(Input.mousePosition))
                 {
                     onZoomIn?.Invoke();
                 }
             }
+
         }
     }
     public void UnregisterZoom()
