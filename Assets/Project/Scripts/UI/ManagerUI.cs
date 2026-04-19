@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ManagerUI : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class ManagerUI : MonoBehaviour
     public int hintDisplayDuration = 3;
     float hintTimer;
 
+    public List<Button> buttons;
+
     private void Awake()
     {
         if (Instance == null)
@@ -25,45 +28,32 @@ public class ManagerUI : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void Start()
-    {
-        if (GyroManager.Instance != null)
-        {
-            GyroManager.Instance.onGyroDisable += EnableOnScreenCameraControls;
-            GyroManager.Instance.onGyroEnable += DisableOnScreenCameraControls;
-        }
-        if (ZoomManager.Instance != null)
-        {
-            ZoomManager.Instance.onZoomIn += DisableOnScreenCameraControls;
-            ZoomManager.Instance.onZoomOut += EnableOnScreenCameraControls;
-        }
-    }
-    private void OnEnable()
-    {
-        if (GyroManager.Instance != null)
-        {
-            GyroManager.Instance.onGyroDisable += EnableOnScreenCameraControls;
-            GyroManager.Instance.onGyroEnable += DisableOnScreenCameraControls;
-        }
-        if (ZoomManager.Instance != null)
-        {
-            ZoomManager.Instance.onZoomIn += DisableOnScreenCameraControls;
-            ZoomManager.Instance.onZoomOut += EnableOnScreenCameraControls;
-        }
-    }
-    private void OnDisable()
-    {
-        if (GyroManager.Instance != null)
-        {
-            GyroManager.Instance.onGyroDisable -= EnableOnScreenCameraControls;
-            GyroManager.Instance.onGyroEnable -= DisableOnScreenCameraControls;
-        }
-        if (ZoomManager.Instance != null)
-        {
-            ZoomManager.Instance.onZoomIn -= DisableOnScreenCameraControls;
-            ZoomManager.Instance.onZoomOut -= EnableOnScreenCameraControls;
-        }
-    }
+    //private void OnEnable()
+    //{
+    //    if (GyroManager.Instance != null)
+    //    {
+    //        GyroManager.Instance.onGyroDisable += EnableOnScreenCameraControls;
+    //        GyroManager.Instance.onGyroEnable += DisableOnScreenCameraControls;
+    //    }
+    //    if (ZoomManager.Instance != null)
+    //    {
+    //        ZoomManager.Instance.onZoomIn += DisableOnScreenCameraControls;
+    //        ZoomManager.Instance.onZoomOut += EnableOnScreenCameraControls;
+    //    }
+    //}
+    //private void OnDisable()
+    //{
+    //    if (GyroManager.Instance != null)
+    //    {
+    //        GyroManager.Instance.onGyroDisable -= EnableOnScreenCameraControls;
+    //        GyroManager.Instance.onGyroEnable -= DisableOnScreenCameraControls;
+    //    }
+    //    if (ZoomManager.Instance != null)
+    //    {
+    //        ZoomManager.Instance.onZoomIn -= DisableOnScreenCameraControls;
+    //        ZoomManager.Instance.onZoomOut -= EnableOnScreenCameraControls;
+    //    }
+    //}
     private void Update()
     {
         if (hintText.enabled)
@@ -107,16 +97,7 @@ public class ManagerUI : MonoBehaviour
             }
         }
     }
-    public void DisableOnScreenCameraControls()
-    {
-        if (onScreenCameraControls != null)
-            onScreenCameraControls.SetActive(false);
-    }
-    public void EnableOnScreenCameraControls()
-    {
-        if (onScreenCameraControls != null)
-            onScreenCameraControls.SetActive(true);
-    }
+
     public void SetHintText(string text)
     {
         hintTimer = Time.time + hintDisplayDuration;

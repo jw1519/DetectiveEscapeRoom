@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inspect : MonoBehaviour
 {
@@ -6,8 +7,8 @@ public class Inspect : MonoBehaviour
 
     GameObject objectToInspect;
     public float rotationSpeed;
-    public GameObject backButton;
-    public GameObject otherButton;
+    public Button backButton;
+    public Button zoomOutButton;
 
     Vector3 previousMousePosition;
     CameraController cam;
@@ -18,9 +19,17 @@ public class Inspect : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            return;
         }
         cam = Camera.main.gameObject.GetComponentInParent<CameraController>();
+    }
+    public void Start()
+    {
+        backButton = ManagerUI.Instance.buttons.Find(b => b.name == "InspectBackButton");
+        backButton.onClick.AddListener(() => DisableInspect());
+
+        zoomOutButton = ManagerUI.Instance.buttons.Find(b => b.name == "ZoomOutButton");
+        zoomOutButton.onClick.AddListener(() => ZoomManager.Instance.UnregisterZoom());
+
         GetComponentInParent<Transform>().gameObject.SetActive(false);
     }
     bool wasActive = false;
@@ -34,12 +43,12 @@ public class Inspect : MonoBehaviour
         if (objectToInspect != null)
         {
             gameObject.SetActive(true);
-            backButton.SetActive(true);
+            backButton.gameObject.SetActive(true);
             item.beingInspected = true;
 
-            if (otherButton != null && otherButton.activeInHierarchy)
+            if (zoomOutButton != null && zoomOutButton.gameObject.activeInHierarchy)
             {
-                otherButton.SetActive(false);
+                zoomOutButton.gameObject.SetActive(false);
                 wasActive = true;
             }
 
@@ -56,9 +65,9 @@ public class Inspect : MonoBehaviour
         objectToInspect.GetComponent<WorldItem>().itemSO.beingInspected = false;
         objectToInspect = null;
         gameObject.SetActive(false);
-        if (wasActive && otherButton != null)
+        if (wasActive && zoomOutButton != null)
         {
-            otherButton.SetActive(true);
+            zoomOutButton.gameObject.SetActive(true);
             wasActive = false;
         }
         EnableInspect(item);
@@ -70,10 +79,10 @@ public class Inspect : MonoBehaviour
         objectToInspect = null;
         gameObject.SetActive(false);
 
-        backButton.SetActive(false);
-        if (wasActive && otherButton != null)
+        backButton.gameObject.SetActive(false);
+        if (wasActive && zoomOutButton != null)
         {
-            otherButton.SetActive(true);
+            zoomOutButton.gameObject.SetActive(true);
             wasActive = false;
         }
         GyroManager.Instance.EnableGyro();

@@ -8,7 +8,7 @@ public class Zoom : MonoBehaviour
     public Quaternion rotation;
     public Vector3 targetPosition;
     CinemachineCamera cinemachineCamera;
-    private void Awake()
+    private void Start()
     {
         zoomCollider = GetComponent<Collider>();
         cinemachineCamera = Camera.main.gameObject.GetComponentInParent<CameraController>().ZoomCamera;

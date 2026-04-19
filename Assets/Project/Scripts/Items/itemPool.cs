@@ -21,7 +21,6 @@ public class ItemPool : MonoBehaviour
 
             if (itemSO.itemID == itemId)
             {
-                Debug.Log("Retrieving item from pool: " + item.name);
                 RemoveItem(item);
                 return item;
             }

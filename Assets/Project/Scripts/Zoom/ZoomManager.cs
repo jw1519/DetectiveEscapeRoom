@@ -13,7 +13,6 @@ public class ZoomManager : MonoBehaviour
     public event Action onZoomIn;
     public event Action onZoomOut;
 
-    public CameraController cameraController;
     Camera cam => Camera.main;
     private void Awake()
     {
@@ -25,6 +24,11 @@ public class ZoomManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+    private void Start()
+    {
+        zoomOutButton = ManagerUI.Instance.buttons.Find(b => b.name == "ZoomOutButton");
+        zoomOutButton.onClick.AddListener(() => UnregisterZoom());
     }
     private void Update()
     {
@@ -71,7 +75,7 @@ public class ZoomManager : MonoBehaviour
         {
             GyroManager.Instance.DisableGyro();
             zoomOutButton.gameObject.SetActive(true);
-            
+
             if (Application.isMobilePlatform)
             {
                 if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
@@ -84,15 +88,11 @@ public class ZoomManager : MonoBehaviour
             }
             else
             {
-                if (!EventSystem.current.IsPointerOverGameObject())
+                if (!ManagerUI.Instance.IsTouchOverUI(Input.mousePosition))
                 {
-                    if (!ManagerUI.Instance.IsTouchOverUI(Input.mousePosition))
-                    {
-                        onZoomIn?.Invoke();
-                    }
+                    onZoomIn?.Invoke();
                 }
             }
-
 
         }
     }

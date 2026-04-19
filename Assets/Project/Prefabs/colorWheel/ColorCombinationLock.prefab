@@ -127,6 +127,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2614649410209494051}
   - component: {fileID: 5522024524066786823}
+  - component: {fileID: 5704268184521973659}
+  - component: {fileID: 5030104433059036395}
   m_Layer: 0
   m_Name: ColorCombinationLock
   m_TagString: Untagged
@@ -167,15 +169,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctCombination:
-  - LightBlue
-  - LightBlue
-  - LightBlue
+  - Green
+  - DarkBlue
+  - Yellow
   - LightBlue
   currentCombination:
   - LightBlue
   - LightBlue
   - LightBlue
   - LightBlue
+  leftDoor: {fileID: 0}
+  rightDoor: {fileID: 0}
+--- !u!114 &5704268184521973659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538825841523334912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d988035f161606c46afe4c5dfbdfab00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomView: 10
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  targetPosition: {x: -2.05, y: -0.34, z: -3.57}
+--- !u!65 &5030104433059036395
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538825841523334912}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.617851, y: 2.8382227, z: 2.845884}
+  m_Center: {x: 0.34361154, y: 1.483489, z: -0.42788312}
 --- !u!1 &6443839409167879588
 GameObject:
   m_ObjectHideFlags: 0

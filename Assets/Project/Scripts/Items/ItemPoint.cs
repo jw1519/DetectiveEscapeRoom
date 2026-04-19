@@ -30,7 +30,6 @@ public class ItemPoint : MonoBehaviour
             if (item.canBePlaced == false)
             {
                 GetComponentInParent<ILock>()?.unlock();
-                //Inventory.Instance.RemoveItem(item);
                 ManagerUI.Instance.panels.Find(panel => panel.name == "InventoryPanel").gameObject.GetComponent<InventoryPanel>().RemoveItem(item);
                 Destroy(gameObject);
                 return;
@@ -43,7 +42,6 @@ public class ItemPoint : MonoBehaviour
             else
             {
                 item.isInCorrectPosition = true;
-                //Inventory.Instance.RemoveItem(item);
                 ManagerUI.Instance.panels.Find(panel => panel.name == "InventoryPanel").gameObject.GetComponent<InventoryPanel>().RemoveItem(item);
                 item.PlaceItem(transform, Vector3.zero);
                 HasAllNeededItems();
