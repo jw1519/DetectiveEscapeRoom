@@ -15,6 +15,10 @@ public class FlashLight : Item
     }
     public override void UseItem()
     {
+        if (lightSource == null)
+        {
+            lightSource = FindFirstObjectByType<RevealLightSource>();
+        }
         lightSource.TurnLightOnOrOff();
     }
 }
