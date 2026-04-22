@@ -68,7 +68,7 @@ public class ItemPoint : MonoBehaviour
     {
         foreach (Item item in useableItems)
         {
-            if (checkItem.itemID == item.itemID)
+            if (checkItem.itemName == item.itemName)
             {
                 return true;
             }
