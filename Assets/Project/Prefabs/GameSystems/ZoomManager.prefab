@@ -46,4 +46,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentZooms: []
   zoomOutButton: {fileID: 0}
-  cameraController: {fileID: 0}

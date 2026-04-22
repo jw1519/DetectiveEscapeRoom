@@ -16,11 +16,34 @@ public class GameManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        foreach (GameObject gameObject in ObjectsToLoad)
+        if (Objects.Count != 0)
         {
-            Instantiate(gameObject);
-            Objects.Add(gameObject);
+            //LoadObjects();
         }
+        else
+        {
+            foreach (GameObject gameObject in ObjectsToLoad)
+            {
+                GameObject GO = Instantiate(gameObject);
+                Objects.Add(GO);
+            }
+        }
+
+
     }
+    //public void LoadObjects()
+    //{
+    //    foreach (var item in Objects)
+    //    {
+    //        item.SetActive(true);
+    //    }
+    //}
+    //public void EndGame()
+    //{
+    //    foreach (var item in Objects)
+    //    {
+    //        item.SetActive(false);
+    //    }
+    //}
 
 }

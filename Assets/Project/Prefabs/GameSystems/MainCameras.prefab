@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 50
   backButton: {fileID: 0}
-  otherButton: {fileID: 0}
+  zoomOutButton: {fileID: 0}
 --- !u!1 &3434581125366439119
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,8 +366,7 @@ MonoBehaviour:
   currentCameraIndex: 0
   inspectCamera: {fileID: 4588921043740869479}
   ZoomCamera: {fileID: 7097773941203379000}
-  leftButton: {fileID: 0}
-  rightButton: {fileID: 0}
+  onScreenCameraControls: {fileID: 0}
 --- !u!1 &5202757136911442824
 GameObject:
   m_ObjectHideFlags: 0

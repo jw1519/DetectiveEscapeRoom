@@ -30,7 +30,7 @@ public class Inspect : MonoBehaviour
         zoomOutButton = ManagerUI.Instance.buttons.Find(b => b.name == "ZoomOutButton");
         zoomOutButton.onClick.AddListener(() => ZoomManager.Instance.UnregisterZoom());
 
-        GetComponentInParent<Transform>().gameObject.SetActive(false);
+        gameObject.transform.parent.gameObject.SetActive(false);
     }
     bool wasActive = false;
     public void EnableInspect(Item item)

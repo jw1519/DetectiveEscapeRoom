@@ -23,7 +23,6 @@ public class ZoomManager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
     private void Start()
     {
