@@ -20,6 +20,11 @@ public class Room : ItemPoint
             int amount = items.Count;
             item.PlaceItem(transform, new Vector3(spacing * amount, 0, 0));
             items.Add(item);
+            HasAllNeededItems();
+            if (isComplete)
+            {
+                manager.GetComponent<Map>().Check();
+            }
         }
         else
             base.UseItemOnPoint(item);
