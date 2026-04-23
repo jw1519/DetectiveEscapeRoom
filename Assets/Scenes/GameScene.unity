@@ -2465,6 +2465,10 @@ PrefabInstance:
       value: 0.1835911
       objectReference: {fileID: 0}
     - target: {fileID: -1537098396163814143, guid: 9295189b4f03b8a47b9873a8492069d1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1537098396163814143, guid: 9295189b4f03b8a47b9873a8492069d1, type: 3}
       propertyPath: m_Center.z
       value: -0.019774064
       objectReference: {fileID: 0}
@@ -5413,6 +5417,7 @@ GameObject:
   - component: {fileID: 722635112}
   - component: {fileID: 722635115}
   - component: {fileID: 722635114}
+  - component: {fileID: 722635116}
   m_Layer: 0
   m_Name: Text (3)
   m_TagString: Untagged
@@ -5436,7 +5441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0079, y: -0.449}
+  m_AnchoredPosition: {x: 0.0079, y: -0.32}
   m_SizeDelta: {x: 1.9729, y: 1.1747}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &722635114
@@ -5459,7 +5464,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The murder left the scene but they couldnt have gotten far
+  m_text: Luckily the detective wasnt near with their stupid notepad and pen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5578,6 +5583,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &722635116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722635111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837408ace11f5194faa069e53ebf8cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &722822598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5785,14 +5802,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5645837551187160410, guid: e5e329ae25741434080c2abacac024fd, type: 3}
       propertyPath: m_text
-      value: 'The detective was writing when the incident happend.
-
-        Alex
-        was with her.'
+      value: The detective was with Alex when the incident occured
       objectReference: {fileID: 0}
     - target: {fileID: 5645837551187160410, guid: e5e329ae25741434080c2abacac024fd, type: 3}
       propertyPath: m_fontSize
-      value: 1.3
+      value: 1.65
       objectReference: {fileID: 0}
     - target: {fileID: 5645837551187160410, guid: e5e329ae25741434080c2abacac024fd, type: 3}
       propertyPath: m_VerticalAlignment
@@ -6321,7 +6335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5645837551187160410, guid: e5e329ae25741434080c2abacac024fd, type: 3}
       propertyPath: m_text
-      value: Sam was seen coming out of the bahroom
+      value: Sam was seen coming out of the bathroom
       objectReference: {fileID: 0}
     - target: {fileID: 5645837551187160410, guid: e5e329ae25741434080c2abacac024fd, type: 3}
       propertyPath: m_fontSize
@@ -7835,7 +7849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4708301675126346, guid: 8c674ba1a98010349987f968cdf73a0a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.3958755
+      value: -2.146
       objectReference: {fileID: 0}
     - target: {fileID: 4708301675126346, guid: 8c674ba1a98010349987f968cdf73a0a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11021,7 +11035,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0079, y: -0.114}
+  m_AnchoredPosition: {x: 0.0079, y: 0.08}
   m_SizeDelta: {x: 1.9729, y: 1.1747}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1321519304
@@ -13346,12 +13360,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.031159, y: 1.2008102, z: 0.36340803}
-  m_Center: {x: -0.015579455, y: -0.010715918, z: -0.13020703}
+  m_Size: {x: 1.2487742, y: 1.2008102, z: 0.36340803}
+  m_Center: {x: 0.016554499, y: -0.010715917, z: -0.13020703}
 --- !u!4 &1623903622 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4772127395882842, guid: 6eeaf47081f246a4cbcd0409a3319a57, type: 3}
@@ -15668,31 +15682,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1865478576442060176, guid: e77512cce247c414cb6e1e5d77241261, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.038000125
       objectReference: {fileID: 0}
     - target: {fileID: 1865478576442060176, guid: e77512cce247c414cb6e1e5d77241261, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.111
+      value: 0.13100006
       objectReference: {fileID: 0}
     - target: {fileID: 1865478576442060176, guid: e77512cce247c414cb6e1e5d77241261, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0235
+      value: 0.07500005
       objectReference: {fileID: 0}
     - target: {fileID: 1865478576442060176, guid: e77512cce247c414cb6e1e5d77241261, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.59963036
+      value: 0.38364094
       objectReference: {fileID: 0}
     - target: {fileID: 1865478576442060176, guid: e77512cce247c414cb6e1e5d77241261, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.80027705
+      value: 0.9234823
       objectReference: {fileID: 0}
     - target: {fileID: 1865478576442060176, guid: e77512cce247c414cb6e1e5d77241261, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.000000029802319
       objectReference: {fileID: 0}
     - target: {fileID: 1865478576442060176, guid: e77512cce247c414cb6e1e5d77241261, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.00000004470348
       objectReference: {fileID: 0}
     - target: {fileID: 1865478576442060176, guid: e77512cce247c414cb6e1e5d77241261, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
