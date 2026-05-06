@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
         if (Objects.Count != 0)
         {
-            //LoadObjects();
+            LoadObjects();
         }
         else
         {
@@ -28,22 +28,21 @@ public class GameManager : MonoBehaviour
                 Objects.Add(GO);
             }
         }
-
-
+        Time.timeScale = 1f;
     }
-    //public void LoadObjects()
-    //{
-    //    foreach (var item in Objects)
-    //    {
-    //        item.SetActive(true);
-    //    }
-    //}
-    //public void EndGame()
-    //{
-    //    foreach (var item in Objects)
-    //    {
-    //        item.SetActive(false);
-    //    }
-    //}
+    public void LoadObjects()
+    {
+        foreach (var item in Objects)
+        {
+            item.SetActive(true);
+        }
+    }
+    public void EndGame()
+    {
+        foreach (var item in Objects)
+        {
+            item.SetActive(false);
+        }
+    }
 
 }

@@ -5,8 +5,7 @@ public class QuitPanel : BasePanel
 {
     public void Quit()
     {
-        //GameManager.Instance.EndGame();
-        //SceneManager.LoadScene("MainMenu"); //starting a new game doesnt work to restart game
-        Application.Quit();
+        GameManager.Instance.EndGame();
+        SceneManager.LoadScene("MainMenu"); //starting a new game doesnt work to restart game
     }
 }
